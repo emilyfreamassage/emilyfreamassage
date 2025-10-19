@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Emily Frea Massage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .logo img {
+            height: 50px;
+            width: auto;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Company Logo" class="logo">
+                <h1>Emily <span>Frea Massage</span></h1>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch to book your appointment or ask questions</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-page">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>We'd love to hear from you. Whether you have questions about our services, want to book an appointment, or just want to learn more, don't hesitate to reach out.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Visit Our Studio</h3>
+                                <p>123 Wellness Avenue, Suite 101<br>San Francisco, CA 94102</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Call Us</h3>
+                                <p>(415) 555-7890</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Email Us</h3>
+                                <p>hello@emilyfreamassage.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Business Hours</h3>
+                                <p>Monday - Friday: 9:00 AM - 7:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="parking-info">
+                        <h3>Parking & Transportation</h3>
+                        <p><strong>Parking:</strong> Street parking is available nearby, with a parking garage located one block away on Market Street.</p>
+                        <p><strong>Public Transit:</strong> We're easily accessible via MUNI and BART. The closest station is Powell Street Station, just a 5-minute walk away.</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form" action="https://formspree.io/f/xldpvwgw" method="POST">
+                        <div class="form-group">
+                            <label for="contact-name">Your Name *</label>
+                            <input type="text" id="contact-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Your Email *</label>
+                            <input type="email" id="contact-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone">Phone Number</label>
+                            <input type="tel" id="contact-phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject *</label>
+                            <select id="contact-subject" name="subject" required>
+                                <option value="">Select a Subject</option>
+                                <option value="booking">Booking Inquiry</option>
+                                <option value="service">Service Questions</option>
+                                <option value="pricing">Pricing Information</option>
+                                <option value="gift-certificate">Gift Certificate</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Your Message *</label>
+                            <textarea id="contact-message" name="message" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-full">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Find Us</h2>
+            <div class="map-container">
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.434347038122!2d-122.4194151846823!3d37.77492927975918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1645561566545!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Preview Section -->
+    <section class="section faq-preview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Common Questions</h2>
+                <p>Quick answers to frequently asked questions</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What should I wear during my massage?</h3>
+                    <p>For full-body massages, most clients undress completely, though you may leave on your underwear if that makes you more comfortable. You will be properly draped during the entire session.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How often should I get a massage?</h3>
+                    <p>For general wellness, once a month is common. For specific issues, weekly or bi-weekly sessions may be recommended initially.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you accept insurance?</h3>
+                    <p>We do not directly bill insurance companies, but we can provide receipts for you to submit to your insurance provider for possible reimbursement.</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="faq.html" class="btn btn-secondary">View All FAQs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Emily Frea Massage</h3>
+                    <p>Your sanctuary for relaxation and rejuvenation. Professional massage therapy tailored to your unique needs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#swedish">Swedish Massage</a></li>
+                        <li><a href="services.html#deep-tissue">Deep Tissue</a></li>
+                        <li><a href="services.html#sports">Sports Massage</a></li>
+                        <li><a href="services.html#hot-stone">Hot Stone Therapy</a></li>
+                        <li><a href="services.html#aromatherapy">Aromatherapy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Wellness Ave, SF, CA</li>
+                        <li><i class="fas fa-phone"></i> (415) 555-7890</li>
+                        <li><i class="fas fa-envelope"></i> emilyfreamassage@outlook.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9am-7pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Emily Frea Massage. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

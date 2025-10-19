@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMILY FREA Massage Therapy - The Healing Power of Aromatherapy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #c5e8c5; /* Light green from your image */
+            --secondary-color: #a8d5a8;
+            --accent-color: #7bc97b;
+            --dark-color: #2a5a2a;
+            --light-color: #f5faf5;
+            --text-color: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--dark-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .logo-img {
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        
+        .tagline {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            margin-top: 5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(42, 90, 42, 0.7), rgba(42, 90, 42, 0.7)), url('https://picsum.photos/seed/aromatherapy-massage/1200/600.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Blog Post Section */
+        .blog-post {
+            padding: 80px 0;
+        }
+        
+        .blog-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .blog-header {
+            margin-bottom: 30px;
+        }
+        
+        .blog-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .blog-meta span {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .blog-meta i {
+            margin-right: 5px;
+            color: var(--accent-color);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .blog-body h3 {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin: 30px 0 15px;
+        }
+        
+        .blog-body p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .aroma-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .aroma-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .aroma-card h4 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .aroma-card h4 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .oil-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .oil-card {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .oil-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .oil-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .oil-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+        
+        .oil-benefits {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        
+        .oil-benefits ul {
+            list-style: none;
+            text-align: left;
+            margin-top: 10px;
+        }
+        
+        .oil-benefits li {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .oil-benefits li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 5px;
+        }
+        
+        .blend-recipe {
+            background-color: var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .blend-recipe h5 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .blend-recipe h5 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .blend-ingredients {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .ingredient {
+            background-color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .application-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .method-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .method-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        .method-name {
+            font-weight: bold;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .method-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid #ffc107;
+        }
+        
+        .warning-box h5 {
+            color: #856404;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .warning-box h5 i {
+            margin-right: 10px;
+            color: #ffc107;
+        }
+        
+        .info-box {
+            background-color: var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .info-box h5 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-box h5 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            animation: fadeIn 0.5s;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Sidebar Styles */
+        .sidebar-widget {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .sidebar-widget h3 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .sidebar-widget ul {
+            list-style: none;
+        }
+        
+        .sidebar-widget ul li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .sidebar-widget ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .sidebar-widget ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .sidebar-widget ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .ceo-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .ceo-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .ceo-info h4 {
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .ceo-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding-right: 20px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            margin-top: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-content {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <a href="images/logo.png" class="logo">
+                        <!-- Logo placeholder - you can replace this with your actual logo -->
+                        <img src="images/logo.png" alt="EMILY FREA Logo" class="logo-img">
+                        <i class="fas fa-spa"></i> EMILY FREA MASSAGE
+                    </a>
+                    <div class="tagline">Massage Therapy & Wellness</div>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">Faq</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>The Healing Power of Aromatherapy</h1>
+            <p>Discover how essential oils can transform your massage experience and enhance your physical and emotional wellbeing</p>
+            <a href="Aromatherapy.html" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post" id="blog">
+        <div class="container">
+            <div class="blog-content">
+                <div class="main-content">
+                    <div class="blog-header">
+                        <h2>The Healing Power of Aromatherapy</h2>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> September 5, 2024</span>
+                            <span><i class="far fa-user"></i> Emily Frea</span>
+                            <span><i class="far fa-comments"></i> 28 Comments</span>
+                        </div>
+                    </div>
+                    
+                    <img src="images/aroma.jpg" alt="Aromatherapy Essential Oils" class="blog-image">
+                    
+                    <div class="blog-body">
+                        <p>Aromatherapy is more than just pleasant scents—it's a powerful healing modality that has been used for thousands of years to promote physical, mental, and emotional wellbeing. When combined with massage therapy, essential oils can enhance the therapeutic benefits, creating a truly transformative experience. At EMILY FREA Massage Therapy, we've mastered the art of integrating aromatherapy into our treatments to provide our clients with exceptional healing experiences.</p>
+                        
+                        <div class="aroma-card">
+                            <h4><i class="fas fa-leaf"></i> Understanding Aromatherapy</h4>
+                            <p>Aromatherapy uses concentrated plant extracts known as essential oils to promote health and wellbeing. These potent oils capture the plant's aromatic compounds, which can influence our bodies through both olfactory (smell) and dermal (skin) absorption pathways.</p>
+                            
+                            <p>When inhaled, essential oil molecules travel to the limbic system—the brain's emotional center—where they can influence mood, stress levels, and even physiological functions like heart rate and blood pressure. When applied to the skin during massage, these oils are absorbed into the bloodstream, where they can provide targeted therapeutic benefits to specific body systems.</p>
+                        </div>
+                        
+                        <h3>Essential Oils and Their Therapeutic Properties</h3>
+                        <p>Different essential oils offer unique benefits, making it possible to customize aromatherapy treatments for specific needs and goals:</p>
+                        
+                        <div class="oil-grid">
+                            <div class="oil-card">
+                                <div class="oil-icon"><i class="fas fa-spa"></i></div>
+                                <div class="oil-name">Lavender</div>
+                                <div class="oil-benefits">
+                                    <ul>
+                                        <li>Calming and relaxing</li>
+                                        <li>Promotes sleep</li>
+                                        <li>Reduces anxiety</li>
+                                        <li>Soothes skin irritation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="oil-card">
+                                <div class="oil-icon"><i class="fas fa-sun"></i></div>
+                                <div class="oil-name">Peppermint</div>
+                                <div class="oil-benefits">
+                                    <ul>
+                                        <li>Invigorating and refreshing</li>
+                                        <li>Relieves headaches</li>
+                                        <li>Eases muscle pain</li>
+                                        <li>Improves focus</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="oil-card">
+                                <div class="oil-icon"><i class="fas fa-tree"></i></div>
+                                <div class="oil-name">Eucalyptus</div>
+                                <div class="oil-benefits">
+                                    <ul>
+                                        <li>Clears respiratory congestion</li>
+                                        <li>Anti-inflammatory</li>
+                                        <li>Boosts immunity</li>
+                                        <li>Mentally clarifying</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="oil-card">
+                                <div class="oil-icon"><i class="fas fa-seedling"></i></div>
+                                <div class="oil-name">Tea Tree</div>
+                                <div class="oil-benefits">
+                                    <ul>
+                                        <li>Antibacterial properties</li>
+                                        <li>Skin healing</li>
+                                        <li>Immune support</li>
+                                        <li>Purifying</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="oil-card">
+                                <div class="oil-icon"><i class="fas fa-heart"></i></div>
+                                <div class="oil-name">Rose</div>
+                                <div class="oil-benefits">
+                                    <ul>
+                                        <li>Emotionally uplifting</li>
+                                        <li>Reduces stress</li>
+                                        <li>Skin rejuvenating</li>
+                                        <li>Enhances mood</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="oil-card">
+                                <div class="oil-icon"><i class="fas fa-fire"></i></div>
+                                <div class="oil-name">Frankincense</div>
+                                <div class="oil-benefits">
+                                    <ul>
+                                        <li>Grounding and centering</li>
+                                        <li>Reduces inflammation</li>
+                                        <li>Supports meditation</li>
+                                        <li>Anti-aging</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="aroma-card">
+                            <h4><i class="fas fa-flask"></i> The Art of Creating Therapeutic Blends</h4>
+                            <p>At EMILY FREA Massage Therapy, we don't just use single essential oils—we create custom blends that synergistically combine multiple oils to enhance their therapeutic effects. Our expert therapists understand the chemical properties of each oil and how they interact to create powerful healing combinations.</p>
+                            
+                            <div class="blend-recipe">
+                                <h5><i class="fas fa-magic"></i> Signature Relaxation Blend</h5>
+                                <p>Perfect for stress relief and deep relaxation</p>
+                                <div class="blend-ingredients">
+                                    <span class="ingredient">3 drops Lavender</span>
+                                    <span class="ingredient">2 drops Bergamot</span>
+                                    <span class="ingredient">1 drop Ylang Ylang</span>
+                                    <span class="ingredient">1 drop Chamomile</span>
+                                </div>
+                            </div>
+                            
+                            <div class="blend-recipe">
+                                <h5><i class="fas fa-magic"></i> Muscle Recovery Blend</h5>
+                                <p>Ideal for post-workout recovery and pain relief</p>
+                                <div class="blend-ingredients">
+                                    <span class="ingredient">3 drops Eucalyptus</span>
+                                    <span class="ingredient">2 drops Peppermint</span>
+                                    <span class="ingredient">2 drops Rosemary</span>
+                                    <span class="ingredient">1 drop Ginger</span>
+                                </div>
+                            </div>
+                            
+                            <div class="blend-recipe">
+                                <h5><i class="fas fa-magic"></i> Immune Support Blend</h5>
+                                <p>Strengthens natural defenses during seasonal changes</p>
+                                <div class="blend-ingredients">
+                                    <span class="ingredient">3 drops Tea Tree</span>
+                                    <span class="ingredient">2 drops Lemon</span>
+                                    <span class="ingredient">2 drops Eucalyptus</span>
+                                    <span class="ingredient">1 drop Clove</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>Application Methods in Massage Therapy</h3>
+                        <p>Essential oils can be incorporated into massage therapy in several ways, each offering unique benefits:</p>
+                        
+                        <div class="application-methods">
+                            <div class="method-card">
+                                <div class="method-icon"><i class="fas fa-tint"></i></div>
+                                <div class="method-name">Direct Application</div>
+                                <div class="method-desc">Oils diluted in carrier oil and applied directly to skin during massage</div>
+                            </div>
+                            
+                            <div class="method-card">
+                                <div class="method-icon"><i class="fas fa-wind"></i></div>
+                                <div class="method-name">Room Diffusion</div>
+                                <div class="method-desc">Oils diffused throughout the treatment room for ambient aromatherapy</div>
+                            </div>
+                            
+                            <div class="method-card">
+                                <div class="method-icon"><i class="fas fa-hot-tub"></i></div>
+                                <div class="method-name">Hot Towel Compress</div>
+                                <div class="method-desc">Oil-infused towels applied to specific areas for deeper penetration</div>
+                            </div>
+                            
+                            <div class="method-card">
+                                <div class="method-icon"><i class="fas fa-spray-can"></i></div>
+                                <div class="method-name">Misting</div>
+                                <div class="method-desc">Fine mist sprayed into the air or over the body during treatment</div>
+                            </div>
+                        </div>
+                        
+                        <div class="aroma-card">
+                            <h4><i class="fas fa-heartbeat"></i> Aromatherapy for Specific Conditions</h4>
+                            <p>Different essential oil combinations can target specific health concerns and wellness goals:</p>
+                            
+                            <h5>For Stress and Anxiety:</h5>
+                            <p>Lavender, bergamot, chamomile, and ylang ylang create a calming blend that reduces cortisol levels and promotes relaxation. These oils work particularly well when combined with gentle Swedish massage techniques.</p>
+                            
+                            <h5>For Pain and Inflammation:</h5>
+                            <p>Wintergreen, peppermint, eucalyptus, and ginger offer powerful anti-inflammatory and analgesic properties. When used with deep tissue massage, these oils can enhance pain relief and reduce muscle soreness.</p>
+                            
+                            <h5>For Energy and Mental Clarity:</h5>
+                            <p>Citrus oils like lemon, orange, and grapefruit combined with peppermint and rosemary can boost energy levels and improve focus. This blend is perfect for those feeling mentally fatigued or overwhelmed.</p>
+                            
+                            <h5>For Sleep Disorders:</h5>
+                            <p>Lavender, cedarwood, vetiver, and Roman chamomile create a sedative blend that promotes restful sleep. Evening massage sessions with this blend can help regulate sleep patterns and improve sleep quality.</p>
+                        </div>
+                        
+                        <h3>The Science Behind Aromatherapy</h3>
+                        <p>Modern research is beginning to validate what ancient practitioners have known for centuries—aromatherapy has measurable effects on the body and mind:</p>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-microscope"></i> Research Findings:</h5>
+                            <p>Studies show that lavender can reduce anxiety levels by up to 40%, while peppermint has been proven to enhance cognitive performance and reduce headache frequency. Citrus oils have demonstrated mood-elevating effects comparable to some antidepressant medications, without the side effects.</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-brain"></i> Neurological Impact:</h5>
+                            <p>When inhaled, essential oil molecules stimulate the olfactory bulb, which has direct connections to the amygdala (emotion) and hippocampus (memory). This explains why certain scents can trigger powerful emotional responses and memories.</p>
+                        </div>
+                        
+                        <div class="aroma-card">
+                            <h4><i class="fas fa-user-md"></i> Safety Considerations and Best Practices</h4>
+                            <p>While natural, essential oils are potent substances that require proper handling and knowledge:</p>
+                            
+                            <h5>Quality Matters:</h5>
+                            <p>We use only therapeutic-grade essential oils from reputable sources. Synthetic fragrances or low-quality oils lack therapeutic properties and may cause adverse reactions.</p>
+                            
+                            <h5>Proper Dilution:</h5>
+                            <p>Essential oils are always diluted in carrier oils before application to skin. Typical dilution rates range from 1-3% depending on the oil and intended use.</p>
+                            
+                            <h5>Individual Sensitivities:</h5>
+                            <p>We always conduct a patch test and discuss allergies before using new oils. Some oils should be avoided during pregnancy or with certain medical conditions.</p>
+                            
+                            <h5>Professional Training:</h5>
+                            <p>Our therapists are certified in aromatherapy and understand the contraindications and proper usage of each essential oil.</p>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <h5><i class="fas fa-exclamation-triangle"></i> Important Safety Note:</h5>
+                            <p>Never ingest essential oils unless under the guidance of a qualified healthcare professional. Some oils can be toxic when consumed internally. Always store essential oils out of reach of children and pets.</p>
+                        </div>
+                        
+                        <h3>Creating Your Personalized Aromatherapy Experience</h3>
+                        <p>At EMILY FREA Massage Therapy, we believe that aromatherapy should be as unique as you are. During your consultation, our therapists will:</p>
+                        
+                        <ul style="margin-left: 20px; margin-bottom: 20px;">
+                            <li>Assess your current health concerns and wellness goals</li>
+                            <li>Consider your scent preferences and any sensitivities</li>
+                            <li>Select appropriate essential oils for your needs</li>
+                            <li>Create a custom blend for your session</li>
+                            <li>Adjust the blend based on your feedback during treatment</li>
+                        </ul>
+                        
+                        <div class="aroma-card">
+                            <h4><i class="fas fa-home"></i> Bringing Aromatherapy Home</h4>
+                            <p>To extend the benefits of your aromatherapy massage, we offer guidance on creating a healing environment at home:</p>
+                            
+                            <h5>Diffuser Blends:</h5>
+                            <p>We can create custom diffuser blends for you to use between sessions, maintaining the therapeutic benefits and creating a consistent healing environment.</p>
+                            
+                            <h5>Roll-on Remedies:</h5>
+                            <p>Personalized roll-on bottles with your custom blend can be used for quick relief throughout the day—perfect for managing stress, headaches, or energy dips.</p>
+                            
+                            <h5>Self-Massage Techniques:</h5>
+                            <p>We'll teach you simple self-massage techniques using your personalized oil blend to maintain progress between professional sessions.</p>
+                        </div>
+                        
+                        <h3>The Future of Aromatherapy in Wellness</h3>
+                        <p>As research continues to validate the benefits of aromatherapy, we're seeing exciting developments in the field. From advanced extraction methods that preserve more of the plant's healing compounds to personalized aromatherapy based on genetic profiles, the future of scent-based healing is bright.</p>
+                        
+                        <p>At EMILY FREA Massage Therapy, we remain at the forefront of these developments, continuously updating our knowledge and techniques to provide our clients with the most effective aromatherapy treatments available.</p>
+                        
+                        <h3>Experience the Transformative Power of Aromatherapy</h3>
+                        <p>Aromatherapy massage offers a multi-sensory healing experience that addresses physical, emotional, and energetic aspects of wellbeing. Whether you're seeking relief from chronic pain, looking to reduce stress, or simply want to enhance your overall wellness, aromatherapy can provide the support you need.</p>
+                        
+                        <p>Our skilled therapists combine deep knowledge of essential oils with expert massage techniques to create treatments that are both profoundly relaxing and therapeutically effective. Each session is customized to your unique needs, ensuring you receive the maximum benefit from your aromatherapy experience.</p>
+                        
+                        <p>Ready to discover how aromatherapy can transform your health and wellbeing? Contact us today to schedule your personalized aromatherapy massage and begin your journey to enhanced wellness through the healing power of essential oils.</p>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>About EMILY FREA</h3>
+                        <div class="ceo-profile">
+                            <img src="images/emily frea.jpeg" alt="Emily Frea" class="ceo-image">
+                            <div class="ceo-info">
+                                <h4>Emily Frea</h4>
+                                <p>CEO & Founder</p>
+                            </div>
+                        </div>
+                        <p>With over 5 years of experience in massage therapy and wellness, Emily Frea founded EMILY FREA Massage Therapy with a vision to provide holistic healing experiences that nurture both body and mind.</p>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Our Services</h3>
+                        <ul>
+                            <li><a href="services.html#swedish">Swedish Massage</a></li>
+                            <li><a href="services.html#deep-tissue">Deep Tissue Massage</a></li>
+                            <li><a href="services.html#sports">Sports Massage</a></li>
+                            <li><a href="#services">Prenatal Massage</a></li>
+                            <li><a href="services.html#hot-stone">Hot Stone Therapy</a></li>
+                            <li><a href="services.html#aromatherapy">Aromatherapy Massage</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Recent Posts</h3>
+                        <ul>
+                            <li><a href="blog-post.html">5 Benefits of Regular Massage Therapy</a></li>
+                            <li><a href="2.html">Stretches for Desk Workers</a></li>
+                            <li><a href="#">Mental Health and Massage</a></li>
+                            <li><a href="3.html">How to Prepare for Your First Massage</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget" id="contact">
+                        <h3>Contact Us</h3>
+                        <form class="contact-form" action="https://formspree.io/f/xldpvwgw" method="POST"
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                            <div class="success-message" id="successMessage">
+                                <i class="fas fa-check-circle"></i> Thank you for messaging us! We'll get back to you soon.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section" id="about">
+                    <h3>About EMILY FREA</h3>
+                    <p>At EMILY FREA Massage Therapy, we're committed to providing exceptional massage services that promote healing, relaxation, and overall wellness. Our team of skilled therapists is dedicated to helping you achieve your health goals.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section" id="services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="services.html#swedish">Swedish Massage</a></li>
+                        <li><a href="services.html#deep-tissue">Deep Tissue Massage</a></li>
+                        <li><a href="services.html#sports">Sports Massage</a></li>
+                        <li><a href="#">Prenatal Massage</a></li>
+                        <li><a href="services.html#hot-stone">Hot Stone Therapy</a></li>
+                        <li><a href="services.html#aromatherapy">Aromatherapy Massage</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Wellness Street, Relaxation City, RC 12345</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> emilyfreamassage@outlook.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9am-8pm, Sat-Sun: 10am-6pm</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 EMILY FREA Massage Therapy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.getElementById('mainNav').classList.remove('active');
+            });
+        });
+        
+        // Form submission with success message
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+            
+            // Here you would normally send the data to a server
+            console.log('Form submitted:', { name, email, message });
+        });
+    </script>
+</body>
+</html>

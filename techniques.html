@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMILY FREA Massage Therapy - Advanced Massage Techniques for Targeted Relief</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/logo.png">
+    <style>
+        :root {
+            --primary-color: #c5e8c5; /* Light green from your image */
+            --secondary-color: #a8d5a8;
+            --accent-color: #7bc97b;
+            --dark-color: #2a5a2a;
+            --light-color: #f5faf5;
+            --text-color: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--dark-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .logo-img {
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        
+        .tagline {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            margin-top: 5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(42, 90, 42, 0.7), rgba(42, 90, 42, 0.7)), url('https://picsum.photos/seed/advanced-massage-techniques/1200/600.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Blog Post Section */
+        .blog-post {
+            padding: 80px 0;
+        }
+        
+        .blog-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .blog-header {
+            margin-bottom: 30px;
+        }
+        
+        .blog-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .blog-meta span {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .blog-meta i {
+            margin-right: 5px;
+            color: var(--accent-color);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .blog-body h3 {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin: 30px 0 15px;
+        }
+        
+        .blog-body p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .technique-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .technique-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .technique-card h4 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .technique-card h4 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .technique-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .technique-detail {
+            flex: 1;
+            min-width: 200px;
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .technique-detail h5 {
+            color: var(--dark-color);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .technique-detail p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        
+        .technique-steps {
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .technique-steps h5 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+        
+        .technique-steps ol {
+            margin-left: 20px;
+        }
+        
+        .technique-steps li {
+            margin-bottom: 8px;
+        }
+        
+        .benefit-tag {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .info-box {
+            background-color: var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .info-box h5 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-box h5 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid #ffc107;
+        }
+        
+        .warning-box h5 {
+            color: #856404;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .warning-box h5 i {
+            margin-right: 10px;
+            color: #ffc107;
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            animation: fadeIn 0.5s;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Sidebar Styles */
+        .sidebar-widget {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .sidebar-widget h3 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .sidebar-widget ul {
+            list-style: none;
+        }
+        
+        .sidebar-widget ul li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .sidebar-widget ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .sidebar-widget ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .sidebar-widget ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .ceo-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .ceo-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .ceo-info h4 {
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .ceo-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding-right: 20px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            margin-top: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-content {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <a href="images/logo.png" class="logo">
+                        <!-- Logo placeholder - you can replace this with your actual logo -->
+                        <img src="images/logo.png" alt="EMILY FREA Logo" class="logo-img">
+                        <i class="fas fa-spa"></i> EMILY FREA MASSAGE
+                    </a>
+                    <div class="tagline">Massage Therapy & Wellness</div>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">Faq</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Advanced Massage Techniques for Targeted Relief</h1>
+            <p>Explore specialized massage methods designed to address specific conditions and provide focused therapeutic benefits</p>
+            <a href="blog.html" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post" id="blog">
+        <div class="container">
+            <div class="blog-content">
+                <div class="main-content">
+                    <div class="blog-header">
+                        <h2>Advanced Massage Techniques for Targeted Relief</h2>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> August 22, 2024</span>
+                            <span><i class="far fa-user"></i> Emily Frea</span>
+                            <span><i class="far fa-comments"></i> 25 Comments</span>
+                        </div>
+                    </div>
+                    
+                    <img src="images/techniques.jpg" alt="Advanced Massage Techniques" class="blog-image">
+                    
+                    <div class="blog-body">
+                        <p>While traditional massage techniques offer numerous benefits, advanced massage methods take therapeutic healing to the next level. At EMILY FREA Massage Therapy, we specialize in cutting-edge techniques that target specific conditions and provide focused relief where you need it most. This guide explores the most effective advanced massage techniques and their specialized applications.</p>
+                        
+                        <div class="technique-card">
+                            <h4><i class="fas fa-hand-rock"></i> Myofascial Release</h4>
+                            <p>Myofascial release is a specialized technique that focuses on releasing tension in the fascia—the connective tissue that surrounds muscles, bones, and organs. This gentle yet powerful technique can address chronic pain and improve mobility.</p>
+                            
+                            <div class="technique-steps">
+                                <h5>How It Works:</h5>
+                                <ol>
+                                    <li>Therapist applies sustained, gentle pressure to restricted areas</li>
+                                    <li>Pressure is maintained for 3-5 minutes to allow fascia to elongate</li>
+                                    <li>Therapist may incorporate stretching during the release</li>
+                                    <li>Multiple areas may be addressed in a single session</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="technique-details">
+                                <div class="technique-detail">
+                                    <h5>Best For</h5>
+                                    <p>Chronic pain, fibromyalgia, restricted mobility, scar tissue</p>
+                                </div>
+                                <div class="technique-detail">
+                                    <h5>Session Length</h5>
+                                    <p>60-90 minutes</p>
+                                </div>
+                                <div class="technique-detail">
+                                    <h5>Recovery Time</h5>
+                                    <p>24-48 hours</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 15px;">
+                                <span class="benefit-tag">Pain Relief</span>
+                                <span class="benefit-tag">Improved Flexibility</span>
+                                <span class="benefit-tag">Better Posture</span>
+                            </div>
+                        </div>
+                        
+                        <div class="technique-card">
+                            <h4><i class="fas fa-brain"></i> Neuromuscular Therapy</h4>
+                            <p>Neuromuscular therapy (NMT) is a precise form of manual therapy that examines the relationship between the nervous system and musculoskeletal system. This technique is highly effective for treating trigger points and chronic pain patterns.</p>
+                            
+                            <div class="technique-steps">
+                                <h5>How It Works:</h5>
+                                <ol>
+                                    <li>Therapist identifies trigger points and muscle imbalances</li>
+                                    <li>Applies focused pressure to specific points</li>
+                                    <li>Uses ischemic compression to release tension</li>
+                                    <li>Incorporates muscle energy techniques to restore balance</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="technique-details">
+                                <div class="technique-detail">
+                                    <h5>Best For</h5>
+                                    <p>Trigger points, chronic pain, muscle spasms, nerve compression</p>
+                                </div>
+                                <div class="technique-detail">
+                                    <h5>Session Length</h5>
+                                    <p>60-75 minutes</p>
+                                </div>
+                                <div class="technique-detail">
+                                    <h5>Recovery Time</h5>
+                                    <p>24-72 hours</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 15px;">
+                                <span class="benefit-tag">Trigger Point Release</span>
+                                <span class="benefit-tag">Nerve Pain Relief</span>
+                                <span class="benefit-tag">Muscle Balance</span>
+                            </div>
+                        </div>
+                        
+                        <div class="technique-card">
+                            <h4><i class="fas fa-water"></i> Lymphatic Drainage</h4>
+                            <p>Manual lymphatic drainage (MLD) is a gentle, rhythmic technique that stimulates the lymphatic system to remove waste and toxins from body tissues. This specialized technique is both therapeutic and deeply relaxing.</p>
+                            
+                            <div class="technique-steps">
+                                <h5>How It Works:</h5>
+                                <ol>
+                                    <li>Therapist uses light, circular movements to stimulate lymph flow</li>
+                                    <li>Technique follows the natural direction of lymphatic pathways</li>
+                                    <li>Sequence begins with central nodes then moves to extremities</li>
+                                    <li>Gentle stretching may be incorporated to enhance flow</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="technique-details">
+                                <div class="technique-detail">
+                                    <h5>Best For</h5>
+                                    <p>Edema, post-surgery recovery, immune support, detoxification</p>
+                                </div>
+                                <div class="technique-detail">
+                                    <h5>Session Length</h5>
+                                    <p>60-90 minutes</p>
+                                </div>
+                                <div class="technique-detail">
+                                    <h5>Recovery Time</h5>
+                                    <p>Minimal</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 15px;">
+                                <span class="benefit-tag">Reduced Swelling</span>
+                                <span class="benefit-tag">Detoxification</span>
+                                <span class="benefit-tag">Immune Boost</span>
+                            </div>
+                        </div>
+                        
+                        <div class="technique-card">
+                            <h4><i class="fas fa-bone"></i> Craniosacral Therapy</h4>
+                            <p>Craniosacral therapy is a gentle, non-invasive technique that works with the body's craniosacral system—the membranes and fluid that surround and protect the brain and spinal cord. This subtle technique can have profound effects on overall health.</p>
+                            
+                            <div class="technique-steps">
+                                <h5>How It Works:</h5>
+                                <ol>
+                                    <li>Therapist uses light touch (no more than 5 grams of pressure)</li>
+                                    <li>Monitors the rhythm of the craniosacral system</li>
+                                    <li>Uses gentle techniques to release restrictions</li>
+                                    <li>Works with the body's self-correcting mechanisms</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="technique-details">
+                                <div class="technique-detail">
+                                    <h5>Best For</h5>
+                                    <p>Headaches, TMJ, stress, PTSD, neurological conditions</p>
+                                </div>
+                                <div class="technique-detail">
+                                    <h5>Session Length</h5>
+                                    <p>60-90 minutes</p>
+                                </div>
+                                <div class="technique-detail">
+                                    <h5>Recovery Time</h5>
+                                    <p>Minimal</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 15px;">
+                                <span class="benefit-tag">Stress Reduction</span>
+                                <span class="benefit-tag">Headache Relief</span>
+                                <span class="benefit-tag">Nervous System Balance</span>
+                            </div>
+                        </div>
+                        
+                        <div class="technique-card">
+                            <h4><i class="fas fa-running"></i> Active Release Techniques</h4>
+                            <p>Active Release Techniques (ART) is a movement-based massage technique that treats problems with muscles, tendons, ligaments, fascia, and nerves. This patented technique is highly effective for repetitive strain injuries and athletic performance.</p>
+                            
+                            <div class="technique-steps">
+                                <h5>How It Works:</h5>
+                                <ol>
+                                    <li>Therapist identifies abnormal tissue through touch</li>
+                                    <li>Client actively moves the affected area while tension is applied</li>
+                                    <li>Specific protocols for over 600 different muscles</li>
+                                    <li>Combines compression and tension with movement</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="technique-details">
+                                <div class="technique-detail">
+                                    <h5>Best For</h5>
+                                    <p>Sports injuries, carpal tunnel, plantar fasciitis, sciatica</p>
+                                </div>
+                                <div class="technique-detail">
+                                    <h5>Session Length</h5>
+                                    <p>30-60 minutes</p>
+                                </div>
+                                <div class="technique-detail">
+                                    <h5>Recovery Time</h5>
+                                    <p>24-48 hours</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 15px;">
+                                <span class="benefit-tag">Injury Recovery</span>
+                                <span class="benefit-tag">Performance Enhancement</span>
+                                <span class="benefit-tag">Adhesion Breakdown</span>
+                            </div>
+                        </div>
+                        
+                        <div class="technique-card">
+                            <h4><i class="fas fa-fire-alt"></i> Cupping Therapy</h4>
+                            <p>Cupping therapy uses suction to create negative pressure on the skin and underlying tissues. This ancient technique has gained modern popularity for its ability to release deep tissue tension and improve circulation.</p>
+                            
+                            <div class="technique-steps">
+                                <h5>How It Works:</h5>
+                                <ol>
+                                    <li>Therapist places cups on specific areas of the body</li>
+                                    <li>Suction creates vacuum effect, lifting tissue</li>
+                                    <li>Cups may remain stationary or be moved along muscles</li>
+                                    <li>Treatment typically lasts 5-15 minutes per area</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="technique-details">
+                                <div class="technique-detail">
+                                    <h5>Best For</h5>
+                                    <p>Deep muscle tension, inflammation, cellulite, respiratory issues</p>
+                                </div>
+                                <div class="technique-detail">
+                                    <h5>Session Length</h5>
+                                    <p>45-60 minutes</p>
+                                </div>
+                                <div class="technique-detail">
+                                    <h5>Recovery Time</h5>
+                                    <p>2-7 days (marks may remain)</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 15px;">
+                                <span class="benefit-tag">Deep Tissue Release</span>
+                                <span class="benefit-tag">Improved Circulation</span>
+                                <span class="benefit-tag">Toxin Release</span>
+                            </div>
+                        </div>
+                        
+                        <h3>Combining Techniques for Optimal Results</h3>
+                        <p>At EMILY FREA Massage Therapy, we often combine multiple advanced techniques to create customized treatment plans. For example:</p>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-info-circle"></i> Chronic Pain Protocol:</h5>
+                            <p>Combining myofascial release with neuromuscular therapy can address both the tissue restrictions and neurological components of chronic pain, providing more comprehensive relief.</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-info-circle"></i> Athletic Recovery:</h5>
+                            <p>Integrating Active Release Techniques with cupping therapy can break down adhesions while improving circulation, accelerating recovery and enhancing performance.</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-info-circle"></i> Stress & Anxiety:</h5>
+                            <p>Combining craniosacral therapy with lymphatic drainage can calm the nervous system while supporting detoxification, addressing both physical and emotional aspects of stress.</p>
+                        </div>
+                        
+                        <h3>What to Expect During an Advanced Technique Session</h3>
+                        <p>Advanced massage sessions may differ from traditional massage experiences:</p>
+                        
+                        <div class="technique-card">
+                            <h4><i class="fas fa-clipboard-check"></i> Initial Assessment</h4>
+                            <p>Your therapist will conduct a thorough assessment to determine which techniques will be most beneficial for your specific condition. This may include movement analysis, postural assessment, and detailed discussion of your symptoms.</p>
+                        </div>
+                        
+                        <div class="technique-card">
+                            <h4><i class="fas fa-comments"></i> Ongoing Communication</h4>
+                            <p>Advanced techniques require more feedback than traditional massage. Your therapist will regularly check in about pressure, sensation, and comfort levels to ensure the treatment is effective and appropriate.</p>
+                        </div>
+                        
+                        <div class="technique-card">
+                            <h4><i class="fas fa-home"></i> Post-Treatment Care</h4>
+                            <p>Advanced techniques may have more significant after-effects. Your therapist will provide specific guidance on post-treatment care, including stretches, hydration recommendations, and activities to avoid.</p>
+                        </div>
+                        
+                        <h3>Frequency and Treatment Planning</h3>
+                        <p>Advanced techniques often require a different treatment schedule than traditional massage:</p>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-calendar-alt"></i> Acute Conditions:</h5>
+                            <p>For recent injuries or acute pain, 2-3 sessions per week for 2-3 weeks may be recommended to achieve initial improvement.</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-calendar-alt"></i> Chronic Conditions:</h5>
+                            <p>Long-standing issues typically benefit from weekly sessions for 4-6 weeks, followed by maintenance treatments every 2-4 weeks.</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-calendar-alt"></i> Performance Enhancement:</h5>
+                            <p>Athletes may benefit from weekly sessions during training periods, with additional treatments before and after competitions.</p>
+                        </div>
+                        
+                        <h3>Choosing the Right Technique for Your Needs</h3>
+                        <p>Selecting the appropriate advanced technique depends on your specific condition and goals:</p>
+                        
+                        <div class="warning-box">
+                            <h5><i class="fas fa-exclamation-triangle"></i> Important Considerations:</h5>
+                            <p>Not all advanced techniques are suitable for everyone. Certain conditions may require medical clearance, and some techniques should be avoided during pregnancy or with specific health conditions. Always provide complete health information to ensure safe and effective treatment.</p>
+                        </div>
+                        
+                        <h3>The Future of Advanced Massage Therapy</h3>
+                        <p>The field of massage therapy continues to evolve with new research and techniques emerging regularly. At EMILY FREA Massage Therapy, we stay at the forefront of these developments, continuously updating our skills and incorporating evidence-based practices to provide the most effective treatments available.</p>
+                        
+                        <h3>Ready to Experience Advanced Healing?</h3>
+                        <p>Advanced massage techniques offer powerful solutions for persistent issues that may not respond to traditional massage methods. Whether you're dealing with chronic pain, recovering from an injury, or seeking to optimize your physical performance, specialized techniques can provide the targeted relief you need.</p>
+                        <p>At EMILY FREA Massage Therapy, our certified therapists have extensive training in multiple advanced techniques and years of experience applying them to help clients achieve remarkable results. We'll work with you to develop a personalized treatment plan that addresses your unique needs and goals.</p>
+                        <p>Don't let persistent pain or limited mobility hold you back any longer. Contact us today to schedule a consultation and discover how advanced massage techniques can transform your health and wellbeing.</p>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>About EMILY FREA</h3>
+                        <div class="ceo-profile">
+                            <img src="images/emily frea.jpeg" alt="Emily Frea" class="ceo-image">
+                            <div class="ceo-info">
+                                <h4>Emily Frea</h4>
+                                <p>CEO & Founder</p>
+                            </div>
+                        </div>
+                        <p>With over 5 years of experience in massage therapy and wellness, Emily Frea founded EMILY FREA Massage Therapy with a vision to provide holistic healing experiences that nurture both body and mind.</p>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Our Services</h3>
+                        <ul>
+                            <li><a href="services.html#swedish">Swedish Massage</a></li>
+                            <li><a href="services.html#deep-tissue">Deep Tissue Massage</a></li>
+                            <li><a href="services.html#sports">Sports Massage</a></li>
+                            <li><a href="#services">Prenatal Massage</a></li>
+                            <li><a href="services.html#hot-stone">Hot Stone Therapy</a></li>
+                            <li><a href="services.html#aromatherapys">Aromatherapy Massage</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Recent Posts</h3>
+                        <ul>
+                            <li><a href="blog-post.html">5 Benefits of Regular Massage Therapy</a></li>
+                            <li><a href="2.html">Stretches for Desk Workers</a></li>
+                            <li><a href="#">Mental Health and Massage</a></li>
+                            <li><a href="3.html">How to Prepare for Your First Massage</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget" id="contact">
+                        <h3>Contact Us</h3>
+                        <form class="contact-form" action="https://formspree.io/f/xldpvwgw" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                            <div class="success-message" id="successMessage">
+                                <i class="fas fa-check-circle"></i> Thank you for messaging us! We'll get back to you soon.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section" id="about">
+                    <h3>About EMILY FREA</h3>
+                    <p>At EMILY FREA Massage Therapy, we're committed to providing exceptional massage services that promote healing, relaxation, and overall wellness. Our team of skilled therapists is dedicated to helping you achieve your health goals.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section" id="services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="services.html#swedish">Swedish Massage</a></li>
+                        <li><a href="services.html#deep-tissue">Deep Tissue Massage</a></li>
+                        <li><a href="services.html#sports">Sports Massage</a></li>
+                        <li><a href="#">Prenatal Massage</a></li>
+                        <li><a href="services.html#hot-stone">Hot Stone Therapy</a></li>
+                        <li><a href="services.html#aromatherapy">Aromatherapy Massage</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> USA Ohio in Cleveland lake wood</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> emilyfreamassage@outlook.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9am-8pm, Sat-Sun: 10am-6pm</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 EMILY FREA Massage Therapy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.getElementById('mainNav').classList.remove('active');
+            });
+        });
+        
+        // Form submission with success message
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+            
+            // Here you would normally send the data to a server
+            console.log('Form submitted:', { name, email, message });
+        });
+    </script>
+</body>
+</html>

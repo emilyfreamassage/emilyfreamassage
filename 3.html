@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMILY FREA Massage Therapy - How to Prepare for Your First Massage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #c5e8c5; /* Light green from your image */
+            --secondary-color: #a8d5a8;
+            --accent-color: #7bc97b;
+            --dark-color: #2a5a2a;
+            --light-color: #f5faf5;
+            --text-color: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--dark-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .tagline {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            margin-top: 5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(42, 90, 42, 0.7), rgba(42, 90, 42, 0.7)), url('https://picsum.photos/seed/first-massage-prep/1200/600.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Blog Post Section */
+        .blog-post {
+            padding: 80px 0;
+        }
+        
+        .blog-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .blog-header {
+            margin-bottom: 30px;
+        }
+        
+        .blog-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .blog-meta span {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .blog-meta i {
+            margin-right: 5px;
+            color: var(--accent-color);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .blog-body h3 {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin: 30px 0 15px;
+        }
+        
+        .blog-body p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .prep-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .prep-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .prep-card h4 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .prep-card h4 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .checklist {
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .checklist h5 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            margin-left: 10px;
+        }
+        
+        .checklist li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .checklist li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 30px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 22px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary-color);
+        }
+        
+        .timeline-time {
+            font-weight: bold;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .info-box {
+            background-color: var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .info-box h5 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-box h5 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        /* Sidebar Styles */
+        .sidebar-widget {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .sidebar-widget h3 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .sidebar-widget ul {
+            list-style: none;
+        }
+        
+        .sidebar-widget ul li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .sidebar-widget ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .sidebar-widget ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .sidebar-widget ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .ceo-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .ceo-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .ceo-info h4 {
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .ceo-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding-right: 20px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            margin-top: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-content {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .timeline::before {
+                left: 15px;
+            }
+            
+            .timeline-item {
+                padding-left: 50px;
+            }
+            
+            .timeline-item::before {
+                left: 7px;
+            }
+        }
+                .logo img {
+            height: 50px;
+            width: auto;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Company Logo" class="logo">
+                <h1>Emily <span>Frea Massage</span></h1>
+            </div>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">Faq</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>How to Prepare for Your First Massage</h1>
+            <p>A comprehensive guide to ensure your first massage experience is relaxing, comfortable, and beneficial</p>
+            <a href="3.html" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post" id="blog">
+        <div class="container">
+            <div class="blog-content">
+                <div class="main-content">
+                    <div class="blog-header">
+                        <h2>How to Prepare for Your First Massage</h2>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> May 10, 2024</span>
+                            <span><i class="far fa-user"></i> Emily Frea</span>
+                            <span><i class="far fa-comments"></i> 15 Comments</span>
+                        </div>
+                    </div>
+                    
+                    <img src="images/mental health.jpg" alt="First Massage Preparation" class="blog-image">
+                    
+                    <div class="blog-body">
+                        <p>Booking your first massage is an exciting step toward better health and relaxation, but it's natural to feel a bit uncertain about what to expect. At EMILY FREA Massage Therapy, we want to ensure your first experience is as comfortable and beneficial as possible. This comprehensive guide will walk you through everything you need to know to prepare for your first massage.</p>
+                        
+                        <div class="prep-card">
+                            <h4><i class="fas fa-calendar-check"></i> Before Your Appointment</h4>
+                            <p>Proper preparation before your massage can significantly enhance your experience and results. Here's what you need to do in the days and hours leading up to your session:</p>
+                            
+                            <div class="checklist">
+                                <h5>24-48 Hours Before:</h5>
+                                <ul>
+                                    <li>Hydrate well by drinking plenty of water</li>
+                                    <li>Avoid heavy meals 2-3 hours before your appointment</li>
+                                    <li>Limit caffeine and alcohol intake</li>
+                                    <li>Avoid intense workouts that might leave you sore</li>
+                                    <li>Write down any questions or concerns for your therapist</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="checklist">
+                                <h5>Day of Your Massage:</h5>
+                                <ul>
+                                    <li>Shower before your appointment (arrive clean)</li>
+                                    <li>Wear comfortable, loose-fitting clothing</li>
+                                    <li>Avoid applying lotions or oils to your skin</li>
+                                    <li>Arrive 10-15 minutes early to complete paperwork</li>
+                                    <li>Use the restroom before your session begins</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="prep-card">
+                            <h4><i class="fas fa-tshirt"></i> What to Wear</h4>
+                            <p>One of the most common questions first-time clients have is about clothing. Here's what you need to know:</p>
+                            <p>For most massage types, you'll be given privacy to undress to your comfort level. This typically means removing clothing to your underwear, but you should never feel pressured to remove more than you're comfortable with. Professional draping techniques ensure you remain covered throughout the session, with only the area being worked on exposed.</p>
+                            <p>Wear comfortable, easy-to-remove clothing to your appointment. Avoid complicated outfits with lots of buttons, zippers, or layers. If you're receiving a chair massage or clothed technique like Thai massage, wear loose, flexible clothing that allows for movement.</p>
+                        </div>
+                        
+                        <div class="prep-card">
+                            <h4><i class="fas fa-comments"></i> Communication with Your Therapist</h4>
+                            <p>Open communication is key to a great massage experience. Your therapist wants to know:</p>
+                            
+                            <div class="checklist">
+                                <h5>Discuss Before Your Session:</h5>
+                                <ul>
+                                    <li>Any injuries, surgeries, or medical conditions</li>
+                                    <li>Areas of pain, tension, or discomfort</li>
+                                    <li>Your pressure preference (light, medium, firm)</li>
+                                    <li>Any areas you want avoided or focused on</li>
+                                    <li>Previous massage experiences (if any)</li>
+                                    <li>Allergies to oils, lotions, or scents</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="info-box">
+                                <h5><i class="fas fa-info-circle"></i> Remember:</h5>
+                                <p>There's no such thing as too much communication. If something doesn't feel right during your massage—whether it's the pressure, temperature, music, or technique—speak up! Your therapist can adjust immediately to ensure your comfort.</p>
+                            </div>
+                        </div>
+                        
+                        <h3>What to Expect During Your First Massage</h3>
+                        <p>Understanding the typical flow of a massage session can help ease any anxiety. Here's a timeline of what to expect:</p>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-time">Arrival (10-15 min early)</div>
+                                <div class="timeline-content">
+                                    <p>You'll complete intake forms and have a brief consultation with your therapist to discuss your needs and goals for the session.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">Preparation (5 min)</div>
+                                <div class="timeline-content">
+                                    <p>Your therapist will show you to the treatment room, explain the process, and give you privacy to undress and get comfortable on the table.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">The Massage (50-80 min)</div>
+                                <div class="timeline-content">
+                                    <p>Your therapist will begin the massage, checking in about pressure and comfort. They'll work through different areas while maintaining professional draping.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">Conclusion (5-10 min)</div>
+                                <div class="timeline-content">
+                                    <p>The session ends with gentle finishing strokes. Your therapist will leave the room for you to dress slowly, then discuss the session and offer aftercare advice.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="prep-card">
+                            <h4><i class="fas fa-heart"></i> After Your Massage</h4>
+                            <p>Proper aftercare helps maximize the benefits of your massage and minimizes any potential soreness:</p>
+                            
+                            <div class="checklist">
+                                <h5>Immediate Aftercare:</h5>
+                                <ul>
+                                    <li>Drink extra water to help flush toxins</li>
+                                    <li>Avoid strenuous activity for the rest of the day</li>
+                                    <li>Take a warm Epsom salt bath if desired</li>
+                                    <li>Rest and allow your body to integrate the work</li>
+                                    <li>Notice how different parts of your body feel</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="checklist">
+                                <h5>Next 24-48 Hours:</h5>
+                                <ul>
+                                    <li>Continue staying well-hydrated</li>
+                                    <li>Some mild soreness is normal (like after exercise)</li>
+                                    <li>Apply heat or cold to any areas that need it</li>
+                                    <li>Gentle stretching can enhance benefits</li>
+                                    <li>Pay attention to improvements in how you feel</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3>Common First-Timer Concerns</h3>
+                        <p>It's completely normal to have questions or concerns about your first massage. Here are answers to some common worries:</p>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-question-circle"></i> "What if I need to use the restroom during the massage?"</h5>
+                            <p>Simply let your therapist know. They'll stop the session, give you privacy to use the restroom, and you can resume when you return.</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-question-circle"></i> "Is it okay to talk during the massage?"</h5>
+                            <p>Absolutely! Some clients prefer silence to relax, while others enjoy conversation. Follow your comfort level—your therapist will match your energy.</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-question-circle"></i> "What if I fall asleep?"</h5>
+                            <p>That's actually a compliment to your therapist! Many clients doze off during massages. It's a sign that you're deeply relaxed.</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-question-circle"></i> "Will I be sore afterward?"</h5>
+                            <p>Mild soreness is possible, especially after deep tissue work, but should feel similar to post-exercise muscle soreness and typically resolves within 24-48 hours.</p>
+                        </div>
+                        
+                        <h3>Booking Your Next Session</h3>
+                        <p>Many first-time clients wonder how often they should schedule massages. While this varies by individual, here are some general guidelines:</p>
+                        <p>For general wellness and stress relief, monthly massages work well for most people. If you're addressing specific issues like chronic pain or injury recovery, weekly or bi-weekly sessions might be recommended initially, then spacing out as you improve.</p>
+                        <p>At EMILY FREA Massage Therapy, we'll work with you to create a personalized treatment plan based on your goals, lifestyle, and budget. Many clients find that regular massage becomes an essential part of their self-care routine.</p>
+                        
+                        <h3>Ready for Your First Massage?</h3>
+                        <p>Now that you know what to expect, you're ready to experience the incredible benefits of massage therapy. Remember that your first massage is just the beginning of your wellness journey, and each session helps your therapist better understand your body's needs.</p>
+                        <p>At EMILY FREA Massage Therapy, we're committed to creating a safe, comfortable, and transformative experience for every client, especially those new to massage. Our skilled therapists are trained to put you at ease and customize each session to your unique needs and preferences.</p>
+                        <p>Book your first appointment today and take the first step toward a more relaxed, balanced, and pain-free life. We look forward to welcoming you to our healing space!</p>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>About EMILY FREA</h3>
+                        <div class="ceo-profile">
+                            <img src="images/emily frea.jpeg" alt="Emily Frea" class="ceo-image">
+                            <div class="ceo-info">
+                                <h4>Emily Frea</h4>
+                                <p>CEO & Founder</p>
+                            </div>
+                        </div>
+                        <p>With over 5 years of experience in massage therapy and wellness, Emily Frea founded EMILY FREA Massage Therapy with a vision to provide holistic healing experiences that nurture both body and mind.</p>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Our Services</h3>
+                        <ul>
+                            <li><a href="services.html">Swedish Massage</a></li>
+                            <li><a href="services.html">Deep Tissue Massage</a></li>
+                            <li><a href="services.html">Sports Massage</a></li>
+                            <li><a href="services.html">Prenatal Massage</a></li>
+                            <li><a href="services.html">Hot Stone Therapy</a></li>
+                            <li><a href="services.html">Aromatherapy Massage</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Recent Posts</h3>
+                        <ul>
+                            <li><a href="blog-post.html">5 Benefits of Regular Massage Therapy</a></li>
+                            <li><a href="2.html">Stretches for Desk Workers</a></li>
+                            <li><a href="3.html">How to Prepare for Your First Massage</a></li>
+                            <li><a href="#">Understanding Different Massage Techniques</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget" id="contact">
+                        <h3>Contact Us</h3>
+                        <form
+                        action="https://formspree.io/f/xldpvwgw"
+                        method="POST"
+                            
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section" id="about">
+                    <h3>About EMILY FREA</h3>
+                    <p>At EMILY FREA Massage Therapy, we're committed to providing exceptional massage services that promote healing, relaxation, and overall wellness. Our team of skilled therapists is dedicated to helping you achieve your health goals.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section" id="services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="services.html">Swedish Massage</a></li>
+                        <li><a href="services.html">Deep Tissue Massage</a></li>
+                        <li><a href="services.html">Sports Massage</a></li>
+                        <li><a href="services.html">Prenatal Massage</a></li>
+                        <li><a href="services.html">Hot Stone Therapy</a></li>
+                        <li><a href="services.html">Aromatherapy Massage</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Wellness Street, Relaxation City, RC 12345</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> emilyfreamassage@outlook.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9am-8pm, Sat-Sun: 10am-6pm</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 EMILY FREA Massage Therapy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.getElementById('mainNav').classList.remove('active');
+            });
+        });
+        
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would normally send the data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! Your message has been received. We'll contact you at ${email} soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>

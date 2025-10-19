@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Massage | Emily Frea Massage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/logo.png">
+    <style>
+        .logo img {
+            height: 50px;
+            width: auto;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Company Logo" class="logo">
+                <h1>Emily <span>Frea Massage</span></h1>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="booking.html" class="active">Booking</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Book Your Massage</h1>
+            <p>Schedule your appointment for relaxation and healing</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="section booking-page">
+        <div class="container">
+            <div class="booking-container">
+                <div class="booking-info">
+                    <h2>Schedule Your Appointment</h2>
+                    <p>Ready to experience the healing power of massage? Book your session using the form below or call us directly at <strong>emilyfreamassage@outlook.com</strong>.</p>
+                    
+                    <div class="booking-details">
+                        <h3>What to Expect</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> <strong>Consultation:</strong> We'll discuss your needs and health history</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Customized Session:</strong> Your massage is tailored to your specific requirements</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Professional Environment:</strong> Clean, comfortable, and private setting</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Aftercare Advice:</strong> Tips for maintaining benefits between sessions</li>
+                        </ul>
+                    </div>
+
+                    <div class="policies">
+                        <h3>Booking Policies</h3>
+                        <div class="policy-item">
+                            <h4>Cancellation Policy</h4>
+                            <p>We require 24 hours notice for cancellations. Appointments cancelled with less than 24 hours notice may be subject to a cancellation fee of 50% of the service price.</p>
+                        </div>
+                        <div class="policy-item">
+                            <h4>Late Arrivals</h4>
+                            <p>If you arrive late, your session may be shortened to accommodate others. You will be responsible for the full service fee.</p>
+                        </div>
+                        <div class="policy-item">
+                            <h4>Health Considerations</h4>
+                            <p>Please inform us of any health conditions, injuries, or allergies when booking your appointment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-form-container">
+                    <form class="booking-form" action="https://formspree.io/f/xldpvwgw" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Type *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="swedish">Swedish Massage</option>
+                                <option value="deep-tissue">Deep Tissue Massage</option>
+                                <option value="sports">Sports Massage</option>
+                                <option value="hot-stone">Hot Stone Massage</option>
+                                <option value="aromatherapy">Aromatherapy Massage</option>
+                                <option value="prenatal">Prenatal Massage</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duration *</label>
+                            <select id="duration" name="duration" required>
+                                <option value="">Select Duration</option>
+                                <option value="60">60 minutes</option>
+                                <option value="75">75 minutes</option>
+                                <option value="90">90 minutes</option>
+                                <option value="120">120 minutes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Preferred Date *</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Preferred Time *</label>
+                            <select id="time" name="time" required>
+                                <option value="">Select Time</option>
+                                <option value="9:00">9:00 AM</option>
+                                <option value="10:30">10:30 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="1:30">1:30 PM</option>
+                                <option value="3:00">3:00 PM</option>
+                                <option value="4:30">4:30 PM</option>
+                                <option value="6:00">6:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Add-on Services</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="addons" value="hot-stone">
+                                    <span class="checkmark"></span>
+                                    Hot Stone Upgrade (+$25)
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="addons" value="aromatherapy">
+                                    <span class="checkmark"></span>
+                                    Aromatherapy (+$20)
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="addons" value="scalp-massage">
+                                    <span class="checkmark"></span>
+                                    Scalp Massage (+$15)
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="addons" value="foot-treatment">
+                                    <span class="checkmark"></span>
+                                    Foot Treatment (+$20)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Special Requests or Health Concerns</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Please list any health conditions, injuries, allergies, or areas of focus..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-full">Request Appointment</button>
+                        </div>
+                        <p class="form-note">We'll contact you within 24 hours to confirm your appointment.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Certificates Section -->
+    <section class="section gift-certificates">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gift Certificates</h2>
+                <p>Give the gift of relaxation</p>
+            </div>
+            <div class="gift-content">
+                <div class="gift-info">
+                    <h3>Perfect for Any Occasion</h3>
+                    <p>Our gift certificates are the perfect solution for birthdays, holidays, anniversaries, or just to show someone you care. Treat your loved ones to the ultimate relaxation experience.</p>
+                    <ul>
+                        <li><i class="fas fa-gift"></i> Available in any amount or service</li>
+                        <li><i class="fas fa-calendar"></i> Valid for one year from purchase date</li>
+                        <li><i class="fas fa-print"></i> Printable or we can mail it for you</li>
+                        <li><i class="fas fa-envelope"></i> Can be emailed directly to recipient</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Purchase Gift Certificate</a>
+                </div>
+                <div class="gift-image">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Gift Certificate">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Emily Frea Massage</h3>
+                    <p>Your sanctuary for relaxation and rejuvenation. Professional massage therapy tailored to your unique needs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#swedish">Swedish Massage</a></li>
+                        <li><a href="services.html#deep-tissue">Deep Tissue</a></li>
+                        <li><a href="services.html#sports">Sports Massage</a></li>
+                        <li><a href="services.html#hot-stone">Hot Stone Therapy</a></li>
+                        <li><a href="services.html#aromatherapy">Aromatherapy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> USA Ohio in Cleveland lake wood</li>
+                        <li><i class="fas fa-envelope"></i> emilyfreamassage@outlook.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9am-7pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Emily Frea Massage. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

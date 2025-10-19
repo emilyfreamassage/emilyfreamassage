@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMILY FREA Massage Therapy - The Connection Between Massage and Sleep Quality</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #c5e8c5; /* Light green from your image */
+            --secondary-color: #a8d5a8;
+            --accent-color: #7bc97b;
+            --dark-color: #2a5a2a;
+            --light-color: #f5faf5;
+            --text-color: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--dark-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .logo-img {
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        
+        .tagline {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            margin-top: 5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(42, 90, 42, 0.7), rgba(42, 90, 42, 0.7)), url('https://picsum.photos/seed/massage-sleep-quality/1200/600.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Blog Post Section */
+        .blog-post {
+            padding: 80px 0;
+        }
+        
+        .blog-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .blog-header {
+            margin-bottom: 30px;
+        }
+        
+        .blog-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .blog-meta span {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .blog-meta i {
+            margin-right: 5px;
+            color: var(--accent-color);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .blog-body h3 {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin: 30px 0 15px;
+        }
+        
+        .blog-body p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .sleep-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .sleep-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .sleep-card h4 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .sleep-card h4 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .sleep-stages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .sleep-stage {
+            flex: 1;
+            min-width: 200px;
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .sleep-stage-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        .sleep-stage h5 {
+            color: var(--dark-color);
+            margin-bottom: 8px;
+        }
+        
+        .sleep-stage p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-box {
+            flex: 1;
+            min-width: 200px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+        
+        .info-box {
+            background-color: var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .info-box h5 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-box h5 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 30px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 22px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary-color);
+        }
+        
+        .timeline-time {
+            font-weight: bold;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            animation: fadeIn 0.5s;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Sidebar Styles */
+        .sidebar-widget {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .sidebar-widget h3 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .sidebar-widget ul {
+            list-style: none;
+        }
+        
+        .sidebar-widget ul li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .sidebar-widget ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .sidebar-widget ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .sidebar-widget ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .ceo-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .ceo-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .ceo-info h4 {
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .ceo-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding-right: 20px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            margin-top: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-content {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .timeline::before {
+                left: 15px;
+            }
+            
+            .timeline-item {
+                padding-left: 50px;
+            }
+            
+            .timeline-item::before {
+                left: 7px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <a href="images/logo.png" class="logo">
+                        <img src="images/logo.png" alt="EMILY FREA Logo" class="logo-img">
+                        <i class="fas fa-spa"></i> EMILY FREA MASSAGE
+                    </a>
+                    <div class="tagline">Massage Therapy & Wellness</div>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">Faq</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>The Connection Between Massage and Sleep Quality</h1>
+            <p>Discover how regular massage therapy can transform your sleep patterns and improve your overall wellbeing</p>
+            <a href="5.html" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post" id="blog">
+        <div class="container">
+            <div class="blog-content">
+                <div class="main-content">
+                    <div class="blog-header">
+                        <h2>The Connection Between Massage and Sleep Quality</h2>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> July 18, 2024</span>
+                            <span><i class="far fa-user"></i> Emily Frea</span>
+                            <span><i class="far fa-comments"></i> 18 Comments</span>
+                        </div>
+                    </div>
+                    
+                    <img src="images/download (16).jpg" alt="Massage and Sleep Quality" class="blog-image">
+                    
+                    <div class="blog-body">
+                        <p>In our fast-paced world, quality sleep has become increasingly elusive for many people. Stress, anxiety, and physical tension often interfere with our ability to rest properly. At EMILY FREA Massage Therapy, we've witnessed firsthand how regular massage can significantly improve sleep quality. This comprehensive guide explores the powerful connection between massage therapy and restorative sleep.</p>
+                        
+                        <div class="sleep-card">
+                            <h4><i class="fas fa-moon"></i> The Science Behind Massage and Sleep</h4>
+                            <p>Massage therapy influences sleep through multiple physiological pathways. Research shows that massage increases the production of delta waves—the brain waves associated with deep sleep—while decreasing cortisol levels and increasing serotonin and dopamine. This biochemical shift creates the ideal conditions for restorative sleep.</p>
+                            
+                            <div class="sleep-stages">
+                                <div class="sleep-stage">
+                                    <div class="sleep-stage-icon"><i class="fas fa-brain"></i></div>
+                                    <h5>Delta Waves</h5>
+                                    <p>Increased during massage, promoting deep sleep</p>
+                                </div>
+                                <div class="sleep-stage">
+                                    <div class="sleep-stage-icon"><i class="fas fa-cloud"></i></div>
+                                    <h5>Cortisol</h5>
+                                    <p>Stress hormone reduced by up to 31%</p>
+                                </div>
+                                <div class="sleep-stage">
+                                    <div class="sleep-stage-icon"><i class="fas fa-smile"></i></div>
+                                    <h5>Serotonin</h5>
+                                    <p>Mood-enhancing neurotransmitter increased</p>
+                                </div>
+                                <div class="sleep-stage">
+                                    <div class="sleep-stage-icon"><i class="fas fa-heart"></i></div>
+                                    <h5>Dopamine</h5>
+                                    <p>Pleasure and reward chemical boosted</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stats-container">
+                            <div class="stat-box">
+                                <div class="stat-number">75%</div>
+                                <div class="stat-label">of people report better sleep after massage</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">90min</div>
+                                <div class="stat-label">average increase in sleep duration</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">3x</div>
+                                <div class="stat-label">more deep sleep with regular massage</div>
+                            </div>
+                        </div>
+                        
+                        <div class="sleep-card">
+                            <h4><i class="fas fa-bed"></i> How Massage Improves Sleep Quality</h4>
+                            <p>Massage therapy addresses multiple factors that contribute to poor sleep. By targeting both the physical and psychological aspects of sleep disturbances, massage creates a comprehensive solution for better rest.</p>
+                            
+                            <h5>Physical Benefits:</h5>
+                            <ul style="margin-left: 20px; margin-bottom: 15px;">
+                                <li>Reduces muscle tension and pain that can disrupt sleep</li>
+                                <li>Improves circulation, delivering more oxygen to tissues</li>
+                                <li>Lowers blood pressure and heart rate</li>
+                                <li>Releases endorphins, natural pain relievers</li>
+                                <li>Regulates the autonomic nervous system</li>
+                            </ul>
+                            
+                            <h5>Psychological Benefits:</h5>
+                            <ul style="margin-left: 20px;">
+                                <li>Reduces anxiety and racing thoughts</li>
+                                <li>Promotes relaxation and mindfulness</li>
+                                <li>Improves mood and emotional balance</li>
+                                <li>Creates a sense of nurturing and safety</li>
+                                <li>Interrupts the stress-sleep disruption cycle</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="sleep-card">
+                            <h4><i class="fas fa-clock"></i> Best Massage Techniques for Sleep Improvement</h4>
+                            <p>While most massage techniques can improve sleep, some are particularly effective for addressing sleep issues:</p>
+                            
+                            <h5>Swedish Massage:</h5>
+                            <p>The gentle, flowing strokes of Swedish massage are ideal for promoting relaxation and preparing the body for sleep. This technique reduces stress hormones and increases the production of mood-enhancing neurotransmitters.</p>
+                            
+                            <h5>Reflexology:</h5>
+                            <p>By targeting specific pressure points on the feet, hands, and ears, reflexology can help balance the body's systems and promote deep relaxation. Many clients report immediate improvements in sleep quality after reflexology sessions.</p>
+                            
+                            <h5>Aromatherapy Massage:</h5>
+                            <p>Combining massage with sleep-promoting essential oils like lavender, chamomile, or sandalwood can enhance the sleep benefits. The olfactory system has direct connections to the brain's sleep centers.</p>
+                            
+                            <h5>Hot Stone Massage:</h5>
+                            <p>The warmth of hot stones helps relax muscles at a deeper level, promoting physical comfort that lasts well beyond the session. This technique is particularly beneficial for those whose sleep is disrupted by muscle tension or pain.</p>
+                        </div>
+                        
+                        <h3>Optimal Timing for Sleep-Enhancing Massage</h3>
+                        <p>The timing of your massage can significantly impact its effect on sleep quality:</p>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-time">Morning (9am-12pm)</div>
+                                <div class="timeline-content">
+                                    <p>While beneficial for overall wellness, morning massages may not directly impact that night's sleep. However, they can reduce daytime stress levels, indirectly improving sleep quality.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">Afternoon (12pm-5pm)</div>
+                                <div class="timeline-content">
+                                    <p>Ideal timing for sleep benefits. The body has time to integrate the massage effects while avoiding the post-massage energy boost that some people experience.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">Evening (5pm-8pm)</div>
+                                <div class="timeline-content">
+                                    <p>Excellent for promoting sleep, but avoid deep tissue work too close to bedtime as it can sometimes cause temporary soreness. Gentle, relaxing techniques work best.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="sleep-card">
+                            <h4><i class="fas fa-calendar-alt"></i> Creating a Massage Routine for Better Sleep</h4>
+                            <p>Consistency is key when using massage to improve sleep. Here's a recommended approach:</p>
+                            
+                            <h5>Initial Phase (Weeks 1-2):</h5>
+                            <p>Start with weekly 60-minute sessions to address existing sleep issues and establish a baseline of relaxation in your body.</p>
+                            
+                            <h5>Maintenance Phase (Weeks 3-8):</h5>
+                            <p>Transition to bi-weekly sessions as your sleep patterns improve. Focus on maintaining the benefits and addressing any new tension patterns.</p>
+                            
+                            <h5>Long-term Maintenance:</h5>
+                            <p>Monthly sessions can help maintain improved sleep quality, with additional sessions during periods of high stress or sleep disruption.</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-lightbulb"></i> Pro Tip:</h5>
+                            <p>Combine your massage sessions with good sleep hygiene practices for optimal results. Create a relaxing bedtime routine, maintain a consistent sleep schedule, and optimize your sleep environment for darkness, quiet, and cool temperatures.</p>
+                        </div>
+                        
+                        <h3>Complementary Practices to Enhance Sleep Benefits</h3>
+                        <p>Maximize the sleep-enhancing effects of massage by incorporating these complementary practices:</p>
+                        
+                        <div class="sleep-card">
+                            <h4><i class="fas fa-home"></i> Creating a Sleep Sanctuary</h4>
+                            <p>Transform your bedroom into a haven for rest. Use blackout curtains, maintain a cool temperature (60-67°F), and eliminate electronic devices. Consider adding calming elements like essential oil diffusers with lavender or chamomile.</p>
+                        </div>
+                        
+                        <div class="sleep-card">
+                            <h4><i class="fas fa-mobile-alt"></i> Digital Detox Before Bed</h4>
+                            <p>Turn off screens at least one hour before bedtime. The blue light emitted by phones, tablets, and computers can disrupt melatonin production. Instead, read a book, practice gentle stretching, or meditate.</p>
+                        </div>
+                        
+                        <div class="sleep-card">
+                            <h4><i class="fas fa-yin-yang"></i> Mindfulness and Meditation</h4>
+                            <p>Practice simple meditation techniques before sleep. Focus on your breath, use guided imagery, or try progressive muscle relaxation. These practices complement the relaxation achieved through massage.</p>
+                        </div>
+                        
+                        <h3>Special Considerations for Sleep Issues</h3>
+                        <p>Different sleep disorders may benefit from specific massage approaches:</p>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-info-circle"></i> For Insomnia:</h5>
+                            <p>Focus on relaxation-based techniques like Swedish massage and aromatherapy. Evening sessions work best, combined with consistent bedtime routines.</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-info-circle"></i> For Sleep Apnea:</h5>
+                            <p>While massage doesn't cure sleep apnea, it can help by reducing tension in the neck and throat muscles. Always follow your doctor's treatment plan.</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-info-circle"></i> For Restless Leg Syndrome:</h5>
+                            <p>Targeted leg massage can help reduce symptoms. Focus on calf and thigh muscles, and consider evening sessions for maximum benefit.</p>
+                        </div>
+                        
+                        <h3>Measuring Your Sleep Improvement</h3>
+                        <p>Track your progress to understand how massage is affecting your sleep quality:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 20px;">
+                            <li>Keep a sleep journal noting bedtime, wake time, and sleep quality</li>
+                            <li>Use sleep tracking apps or devices for objective data</li>
+                            <li>Rate your energy levels and mood upon waking</li>
+                            <li>Note any changes in sleep patterns after massage sessions</li>
+                            <li>Track the frequency of nighttime awakenings</li>
+                        </ul>
+                        
+                        <h3>When to Seek Additional Help</h3>
+                        <p>While massage can significantly improve sleep quality, some sleep issues may require additional intervention. Consider consulting a sleep specialist if:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 20px;">
+                            <li>Sleep problems persist after regular massage therapy</li>
+                            <li>You experience symptoms of sleep apnea (loud snoring, gasping for air)</li>
+                            <li>Daytime fatigue significantly impacts your daily functioning</li>
+                            <li>You have chronic insomnia lasting more than a month</li>
+                            <li>Sleep issues are accompanied by other concerning symptoms</li>
+                        </ul>
+                        
+                        <h3>Ready for Better Sleep?</h3>
+                        <p>Quality sleep is fundamental to your physical health, emotional wellbeing, and overall quality of life. At EMILY FREA Massage Therapy, we're committed to helping you achieve the restorative sleep you deserve through personalized massage treatments.</p>
+                        <p>Our experienced therapists understand the intricate connection between touch and sleep, and we'll work with you to develop a treatment plan that addresses your specific sleep concerns. Whether you're dealing with occasional sleeplessness or chronic sleep issues, regular massage therapy can be a powerful tool in your sleep improvement toolkit.</p>
+                        <p>Don't let another night of poor sleep affect your wellbeing. Contact us today to schedule your first session and start your journey toward better sleep and improved health.</p>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>About EMILY FREA</h3>
+                        <div class="ceo-profile">
+                            <img src="images/emily frea.jpeg" alt="Emily Frea" class="ceo-image">
+                            <div class="ceo-info">
+                                <h4>Emily Frea</h4>
+                                <p>CEO & Founder</p>
+                            </div>
+                        </div>
+                        <p>With over 5 years of experience in massage therapy and wellness, Emily Frea founded EMILY FREA Massage Therapy with a vision to provide holistic healing experiences that nurture both body and mind.</p>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Our Services</h3>
+                        <ul>
+                            <li><a href="services.html#swedish">Swedish Massage</a></li>
+                            <li><a href="services.html#deep-tissue">Deep Tissue Massage</a></li>
+                            <li><a href="services.html#sports">Sports Massage</a></li>
+                            <li><a href="#services">Prenatal Massage</a></li>
+                            <li><a href="services.html#hot-stone">Hot Stone Therapy</a></li>
+                            <li><a href="services.html#aromatherapy">Aromatherapy Massage</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Recent Posts</h3>
+                        <ul>
+                            <li><a href="blog-post.html">5 Benefits of Regular Massage Therapy</a></li>
+                            <li><a href="2.html">Stretches for Desk Workers</a></li>
+                            <li><a href="#">Mental Health and Massage</a></li>
+                            <li><a href="3.html">How to Prepare for Your First Massage</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget" id="contact">
+                        <h3>Contact Us</h3>
+                        <form class="contact-form" action="https://formspree.io/f/xldpvwgw" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                            <div class="success-message" id="successMessage">
+                                <i class="fas fa-check-circle"></i> Thank you for messaging us! We'll get back to you soon.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section" id="about">
+                    <h3>About EMILY FREA</h3>
+                    <p>At EMILY FREA Massage Therapy, we're committed to providing exceptional massage services that promote healing, relaxation, and overall wellness. Our team of skilled therapists is dedicated to helping you achieve your health goals.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section" id="services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="services.html#swedish">Swedish Massage</a></li>
+                        <li><a href="services.html#deep-tissue">Deep Tissue Massage</a></li>
+                        <li><a href="services.html#sports">Sports Massage</a></li>
+                        <li><a href="#">Prenatal Massage</a></li>
+                        <li><a href="services.html#hot-stone">Hot Stone Therapy</a></li>
+                        <li><a href="services.html#aromatherapy">Aromatherapy Massage</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Wellness Street, Relaxation City, RC 12345</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> emilyfreamassage@outlook.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9am-8pm, Sat-Sun: 10am-6pm</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 EMILY FREA Massage Therapy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.getElementById('mainNav').classList.remove('active');
+            });
+        });
+        
+        // Form submission with success message
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+            
+            // Here you would normally send the data to a server
+            console.log('Form submitted:', { name, email, message });
+        });
+    </script>
+</body>
+</html>
