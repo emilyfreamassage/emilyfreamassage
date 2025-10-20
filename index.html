@@ -249,9 +249,454 @@
     </footer>
 
     <script src="js/script.js"></script>
+        <!-- Ask AI Widget -->
+<div class="ai-widget">
+    <button class="ai-toggle-btn" onclick="toggleAIWidget()">
+        <i class="fas fa-robot"></i> Ask Massage AI
+    </button>
+    
+    <div class="ai-chat-container" id="aiChatContainer">
+        <div class="ai-header">
+            <h4>🤖 Massage Therapy Assistant</h4>
+            <button class="ai-close" onclick="toggleAIWidget()">×</button>
+        </div>
+        <div class="ai-messages" id="aiMessages">
+            <div class="ai-message bot">
+                <strong>Hello! I'm your massage therapy assistant.</strong><br><br>
+                I can help you with:
+                • Massage service recommendations
+                • Pain relief advice  
+                • Wellness tips
+                • Appointment information
+                <br><br>
+                How can I assist with your wellness journey today?
+            </div>
+        </div>
+        <div class="ai-input">
+            <input type="text" id="aiInput" placeholder="Ask about massage services, pain relief, or wellness..." onkeypress="handleAIKeyPress(event)">
+            <button onclick="sendAIMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+<style>
+.ai-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.ai-toggle-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.ai-toggle-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.ai-chat-container {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    width: 380px;
+    height: 450px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    border: 1px solid var(--secondary);
+    overflow: hidden;
+}
+
+.ai-chat-container.active {
+    display: flex;
+}
+
+.ai-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ai-header h4 {
+    margin: 0;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.ai-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.ai-close:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.ai-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #fafafa;
+}
+
+.ai-message {
+    padding: 12px 16px;
+    border-radius: 18px;
+    max-width: 85%;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ai-message.bot {
+    background: white;
+    border: 1px solid var(--secondary);
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.ai-message.user {
+    background: var(--primary);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.ai-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid var(--secondary);
+    gap: 10px;
+    background: white;
+}
+
+.ai-input input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid var(--secondary);
+    border-radius: 25px;
+    outline: none;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.ai-input input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(138, 155, 110, 0.1);
+}
+
+.ai-input button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ai-input button:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 8px 0;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typing {
+    0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+    40% { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .ai-chat-container {
+        width: 320px;
+        height: 400px;
+        right: 10px;
+    }
+    
+    .ai-widget {
+        right: 10px;
+        bottom: 10px;
+    }
+}
+</style>
+
+<script>
+let aiWidgetOpen = false;
+
+function toggleAIWidget() {
+    const container = document.getElementById('aiChatContainer');
+    aiWidgetOpen = !aiWidgetOpen;
+    container.classList.toggle('active', aiWidgetOpen);
+    
+    if (aiWidgetOpen) {
+        document.getElementById('aiInput').focus();
+    }
+}
+
+function handleAIKeyPress(event) {
+    if (event.key === 'Enter') {
+        sendAIMessage();
+    }
+}
+
+async function sendAIMessage() {
+    const input = document.getElementById('aiInput');
+    const messagesContainer = document.getElementById('aiMessages');
+    const userMessage = input.value.trim();
+    
+    if (!userMessage) return;
+    
+    // Add user message
+    const userMsgDiv = document.createElement('div');
+    userMsgDiv.className = 'ai-message user';
+    userMsgDiv.textContent = userMessage;
+    messagesContainer.appendChild(userMsgDiv);
+    
+    // Clear input
+    input.value = '';
+    
+    // Show typing indicator
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'ai-message bot';
+    typingDiv.id = 'typingIndicator';
+    
+    const typingText = document.createElement('div');
+    typingText.textContent = 'Emily is typing';
+    typingText.style.fontSize = '0.8rem';
+    typingText.style.color = 'var(--accent)';
+    typingText.style.marginBottom = '5px';
+    
+    const typingDots = document.createElement('div');
+    typingDots.className = 'typing-indicator';
+    typingDots.innerHTML = `
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+    `;
+    
+    typingDiv.appendChild(typingText);
+    typingDiv.appendChild(typingDots);
+    messagesContainer.appendChild(typingDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    
+    try {
+        // Try DeepSeek API first, fallback to smart responses
+        const response = await getAIResponse(userMessage);
+        
+        // Remove typing indicator
+        document.getElementById('typingIndicator').remove();
+        
+        // Add AI response
+        const aiMsgDiv = document.createElement('div');
+        aiMsgDiv.className = 'ai-message bot';
+        aiMsgDiv.textContent = response;
+        messagesContainer.appendChild(aiMsgDiv);
+        
+    } catch (error) {
+        console.error('AI Error:', error);
+        document.getElementById('typingIndicator').remove();
+        
+        // Fallback to smart responses
+        const fallbackResponse = getSmartResponse(userMessage);
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'ai-message bot';
+        errorDiv.textContent = fallbackResponse;
+        messagesContainer.appendChild(errorDiv);
+    }
+    
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+async function getAIResponse(userMessage) {
+    // Try DeepSeek API
+    try {
+        const API_KEY = 'sk-7f0c2ef09e30413f870db846104a5fa9';
+        const API_URL = 'https://api.deepseek.com/v1/chat/completions';
+        
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${API_KEY}`
+            },
+            body: JSON.stringify({
+                model: 'deepseek-chat',
+                messages: [
+                    {
+                        role: "system",
+                        content: `You are Emily, a professional massage therapy assistant at Emily Frea Massage in USA Ohio in Cleveland lake wood. 
+                        Services: Swedish ($85), Deep Tissue ($95), Sports ($90), Hot Stone ($110), Aromatherapy ($95), Prenatal ($90).
+                        Be warm, professional, and provide helpful advice about massage therapy, pain relief, and wellness.
+                        Keep responses concise (2-3 sentences). Always encourage booking a session for personalized care.`
+                    },
+                    {
+                        role: "user",
+                        content: userMessage
+                    }
+                ],
+                max_tokens: 300,
+                temperature: 0.7
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`API Error: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (data.choices && data.choices[0] && data.choices[0].message) {
+            return data.choices[0].message.content;
+        } else {
+            throw new Error('Invalid API response');
+        }
+        
+    } catch (error) {
+        console.log('DeepSeek API failed, using smart responses');
+        throw error; // This will trigger the fallback
+    }
+}
+
+function getSmartResponse(userMessage) {
+    const lowerMessage = userMessage.toLowerCase();
+    
+    // Service-related questions
+    if (lowerMessage.includes('service') || lowerMessage.includes('offer') || lowerMessage.includes('type')) {
+        return "We offer Swedish Massage for relaxation ($85), Deep Tissue for chronic pain ($95), Sports Massage for athletes ($90), Hot Stone for deep relaxation ($110), Aromatherapy for stress relief ($95), and Prenatal Massage for expectant mothers ($90). Which one interests you?";
+    }
+    
+    if (lowerMessage.includes('swedish')) {
+        return "Swedish Massage is perfect for relaxation and stress relief. It uses long, flowing strokes to ease muscle tension and promote overall wellness. A 60-minute session is $85. Would you like to book one?";
+    }
+    
+    if (lowerMessage.includes('deep tissue') || lowerMessage.includes('pain')) {
+        return "Deep Tissue Massage targets deeper muscle layers to relieve chronic pain and tension. It's excellent for specific problem areas and recovery. A 60-minute session is $95. Perfect if you have ongoing muscle issues.";
+    }
+    
+    if (lowerMessage.includes('sport')) {
+        return "Sports Massage is designed for athletes to enhance performance and prevent injuries. It focuses on areas of intense physical use and promotes faster recovery. A 60-minute session is $90.";
+    }
+    
+    // Booking questions
+    if (lowerMessage.includes('book') || lowerMessage.includes('appointment') || lowerMessage.includes('schedule')) {
+        return "You can book online through our website or call us at (415) 555-7890. We're open Monday-Friday 9am-7pm and Saturday 10am-4pm. What type of massage would you like to schedule?";
+    }
+    
+    if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('how much')) {
+        return "Our massage sessions range from $85 for 60-minute Swedish to $135 for 90-minute Hot Stone. We also offer packages: 3 sessions for $240 or 6 sessions for $520. Which service are you interested in?";
+    }
+    
+    // Benefit questions
+    if (lowerMessage.includes('benefit') || lowerMessage.includes('help') || lowerMessage.includes('good for')) {
+        return "Massage therapy reduces stress, relieves muscle pain, improves circulation, enhances sleep quality, and promotes overall wellness. Regular sessions can significantly improve your quality of life!";
+    }
+    
+    if (lowerMessage.includes('stress') || lowerMessage.includes('anxiety') || lowerMessage.includes('relax')) {
+        return "Massage is excellent for stress relief! It lowers cortisol levels and increases feel-good hormones. Swedish or Aromatherapy massages are particularly effective for relaxation and mental calmness.";
+    }
+    
+    if (lowerMessage.includes('sleep')) {
+        return "Massage can significantly improve sleep quality by reducing pain, decreasing anxiety, and promoting deep relaxation. Many clients report falling asleep faster and sleeping more deeply after sessions.";
+    }
+    
+    // Location and contact
+    if (lowerMessage.includes('where') || lowerMessage.includes('location') || lowerMessage.includes('address')) {
+        return "We're located at USA Ohio in Cleveland lake wood. Easy parking and accessible by public transit. Would you like directions?";
+    }
+    
+    if (lowerMessage.includes('phone') || lowerMessage.includes('number') || lowerMessage.includes('call')) {
+        return "You can reach us at emilyfreamassage@outlook.com. We'd be happy to answer any questions or help you book an appointment!";
+    }
+    
+    if (lowerMessage.includes('hour') || lowerMessage.includes('open') || lowerMessage.includes('time')) {
+        return "We're open Monday-Friday 9:00 AM - 7:00 PM and Saturday 10:00 AM - 4:00 PM. Closed on Sundays. When would you like to visit us?";
+    }
+    
+    // General massage questions
+    if (lowerMessage.includes('first time') || lowerMessage.includes('new')) {
+        return "Welcome! For first-time clients, I recommend Swedish Massage - it's gentle and relaxing. Wear comfortable clothing and arrive 10 minutes early to complete paperwork. Any specific concerns?";
+    }
+    
+    if (lowerMessage.includes('how often') || lowerMessage.includes('frequency')) {
+        return "For general wellness, monthly sessions are great. For specific issues or high stress, every 2-3 weeks works well. We can create a personalized plan during your first visit!";
+    }
+    
+    // Default response
+    return "That's a great question about massage therapy! For personalized advice on " + userMessage + ", I recommend booking a consultation. Would you like information about our services or how to schedule an appointment?";
+}
+
+// Close AI widget when clicking outside
+document.addEventListener('click', function(event) {
+    const aiWidget = document.querySelector('.ai-widget');
+    const aiContainer = document.getElementById('aiChatContainer');
+    
+    if (aiWidgetOpen && !aiWidget.contains(event.target)) {
+        toggleAIWidget();
+    }
+});
+</script>
 </body>
 
 </html>
+
 
 
 
