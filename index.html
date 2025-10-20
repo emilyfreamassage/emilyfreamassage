@@ -249,7 +249,7 @@
     </footer>
 
     <script src="js/script.js"></script>
-        <!-- Ask AI Widget -->
+<!-- Ask AI Widget -->
 <div class="ai-widget">
     <button class="ai-toggle-btn" onclick="toggleAIWidget()">
         <i class="fas fa-robot"></i> Ask Massage AI
@@ -257,23 +257,24 @@
     
     <div class="ai-chat-container" id="aiChatContainer">
         <div class="ai-header">
-            <h4>🤖 Massage Therapy Assistant</h4>
+            <h4>🤖 Massage Therapy Expert</h4>
             <button class="ai-close" onclick="toggleAIWidget()">×</button>
         </div>
         <div class="ai-messages" id="aiMessages">
             <div class="ai-message bot">
-                <strong>Hello! I'm your massage therapy assistant.</strong><br><br>
-                I can help you with:
-                • Massage service recommendations
-                • Pain relief advice  
-                • Wellness tips
-                • Appointment information
+                <strong>Hello! I'm your massage therapy specialist.</strong><br><br>
+                I can help with:
+                • All massage techniques & benefits
+                • Career & training guidance  
+                • Business & practice management
+                • Client care & aftercare
+                • Wellness & self-care tips
                 <br><br>
-                How can I assist with your wellness journey today?
+                What would you like to know about massage therapy?
             </div>
         </div>
         <div class="ai-input">
-            <input type="text" id="aiInput" placeholder="Ask about massage services, pain relief, or wellness..." onkeypress="handleAIKeyPress(event)">
+            <input type="text" id="aiInput" placeholder="Ask anything about massage therapy..." onkeypress="handleAIKeyPress(event)">
             <button onclick="sendAIMessage()"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
@@ -311,8 +312,8 @@
     position: absolute;
     bottom: 60px;
     right: 0;
-    width: 380px;
-    height: 450px;
+    width: 400px;
+    height: 500px;
     background: white;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -466,8 +467,8 @@
 
 @media (max-width: 768px) {
     .ai-chat-container {
-        width: 320px;
-        height: 400px;
+        width: 340px;
+        height: 450px;
         right: 10px;
     }
     
@@ -519,7 +520,7 @@ async function sendAIMessage() {
     typingDiv.id = 'typingIndicator';
     
     const typingText = document.createElement('div');
-    typingText.textContent = 'Emily is typing';
+    typingText.textContent = 'Massage Expert is typing';
     typingText.style.fontSize = '0.8rem';
     typingText.style.color = 'var(--accent)';
     typingText.style.marginBottom = '5px';
@@ -538,6 +539,17 @@ async function sendAIMessage() {
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
     
     try {
+        // Check if question is about massage therapy
+        if (!isMassageRelated(userMessage)) {
+            document.getElementById('typingIndicator').remove();
+            const offTopicDiv = document.createElement('div');
+            offTopicDiv.className = 'ai-message bot';
+            offTopicDiv.textContent = "I'm specifically programmed to advise about massage therapy, wellness, and related topics. Please ask me about massage techniques, benefits, career guidance, or anything related to massage therapy practice.";
+            messagesContainer.appendChild(offTopicDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            return;
+        }
+        
         // Try DeepSeek API first, fallback to smart responses
         const response = await getAIResponse(userMessage);
         
@@ -565,6 +577,43 @@ async function sendAIMessage() {
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
+function isMassageRelated(message) {
+    const lowerMessage = message.toLowerCase();
+    const massageKeywords = [
+        // Techniques & Services
+        'massage', 'therapy', 'swedish', 'deep tissue', 'sports', 'hot stone', 'aromatherapy', 
+        'prenatal', 'shiatsu', 'thai', 'reflexology', 'trigger point', 'myofascial', 'craniosacral',
+        'lymphatic', 'medical', 'chair', 'couples', 'tui na', 'lomi lomi', 'polarity',
+        
+        // Body & Health
+        'muscle', 'pain', 'tension', 'stress', 'relax', 'relaxation', 'wellness', 'health',
+        'body', 'muscular', 'sore', 'stiff', 'ache', 'knot', 'trigger', 'fascia', 'tissue',
+        'circulation', 'lymph', 'posture', 'alignment', 'flexibility', 'mobility',
+        
+        // Career & Business
+        'therapist', 'license', 'certified', 'school', 'training', 'course', 'career',
+        'business', 'practice', 'clinic', 'spa', 'studio', 'client', 'session', 'appointment',
+        'insurance', 'liability', 'ce', 'continuing education', 'certification', 'license',
+        'salary', 'income', 'job', 'employment', 'self employed', 'independent contractor',
+        
+        // Equipment & Products
+        'table', 'lotion', 'oil', 'cream', 'essential oil', 'massager', 'tool', 'equipment',
+        'bolster', 'pillow', 'sheet', 'drape', 'hot pack', 'cold pack',
+        
+        // Conditions & Benefits
+        'headache', 'migraine', 'back pain', 'neck pain', 'shoulder', 'sciatica', 'fibromyalgia',
+        'arthritis', 'injury', 'recovery', 'rehab', 'rehabilitation', 'prevention', 'athlete',
+        'performance', 'range of motion', 'inflammation', 'swelling', 'detox', 'toxin',
+        
+        // General Wellness
+        'self care', 'wellbeing', 'mental health', 'anxiety', 'depression', 'sleep', 'insomnia',
+        'meditation', 'breathing', 'yoga', 'stretch', 'exercise', 'fitness', 'recovery',
+        'holistic', 'alternative', 'complementary', 'integrated'
+    ];
+    
+    return massageKeywords.some(keyword => lowerMessage.includes(keyword));
+}
+
 async function getAIResponse(userMessage) {
     // Try DeepSeek API
     try {
@@ -582,17 +631,32 @@ async function getAIResponse(userMessage) {
                 messages: [
                     {
                         role: "system",
-                        content: `You are Emily, a professional massage therapy assistant at Emily Frea Massage in USA Ohio in Cleveland lake wood. 
-                        Services: Swedish ($85), Deep Tissue ($95), Sports ($90), Hot Stone ($110), Aromatherapy ($95), Prenatal ($90).
-                        Be warm, professional, and provide helpful advice about massage therapy, pain relief, and wellness.
-                        Keep responses concise (2-3 sentences). Always encourage booking a session for personalized care.`
+                        content: `You are a massage therapy expert AI assistant. You ONLY answer questions about:
+                        
+MASSAGE TECHNIQUES: Swedish, Deep Tissue, Sports, Hot Stone, Aromatherapy, Prenatal, Thai, Shiatsu, Reflexology, Trigger Point, Myofascial Release, Craniosacral, Lymphatic Drainage, Medical Massage, Chair Massage, Couples Massage
+
+CAREER & TRAINING: Massage therapy school requirements, licensing, certification, continuing education, career paths, business setup, client management, ethics, professional development
+
+BUSINESS ASPECTS: Starting a practice, pricing, marketing, insurance, legal requirements, equipment, studio setup, client retention, scheduling, record keeping
+
+CLIENT CARE: Assessment techniques, contraindications, aftercare advice, home care recommendations, client education, session planning
+
+WELLNESS & HEALTH: Benefits for specific conditions, stress relief, pain management, injury recovery, preventive care, holistic wellness
+
+EQUIPMENT & PRODUCTS: Massage tables, oils, lotions, tools, hygiene, sanitation, product recommendations
+
+If asked about anything outside massage therapy, politely decline and redirect to massage topics.
+
+Contact email: emilyfreamassage@outlook.com
+
+Keep responses professional, accurate, and helpful.`
                     },
                     {
                         role: "user",
                         content: userMessage
                     }
                 ],
-                max_tokens: 300,
+                max_tokens: 500,
                 temperature: 0.7
             })
         });
@@ -611,76 +675,115 @@ async function getAIResponse(userMessage) {
         
     } catch (error) {
         console.log('DeepSeek API failed, using smart responses');
-        throw error; // This will trigger the fallback
+        throw error;
     }
 }
 
 function getSmartResponse(userMessage) {
     const lowerMessage = userMessage.toLowerCase();
     
-    // Service-related questions
-    if (lowerMessage.includes('service') || lowerMessage.includes('offer') || lowerMessage.includes('type')) {
-        return "We offer Swedish Massage for relaxation ($85), Deep Tissue for chronic pain ($95), Sports Massage for athletes ($90), Hot Stone for deep relaxation ($110), Aromatherapy for stress relief ($95), and Prenatal Massage for expectant mothers ($90). Which one interests you?";
+    // Massage Techniques & Services
+    if (lowerMessage.includes('technique') || lowerMessage.includes('type') || lowerMessage.includes('modality')) {
+        return "Common massage techniques include: Swedish (relaxation), Deep Tissue (chronic pain), Sports (athletic performance), Hot Stone (deep relaxation), Aromatherapy (stress relief), Prenatal (pregnancy), Thai (stretching), Shiatsu (pressure points), and Reflexology (foot therapy). Which one interests you?";
     }
     
     if (lowerMessage.includes('swedish')) {
-        return "Swedish Massage is perfect for relaxation and stress relief. It uses long, flowing strokes to ease muscle tension and promote overall wellness. A 60-minute session is $85. Would you like to book one?";
+        return "Swedish Massage uses long gliding strokes, kneading, and circular movements to relax muscles and improve circulation. Perfect for stress relief and general relaxation. Sessions typically last 60-90 minutes.";
     }
     
-    if (lowerMessage.includes('deep tissue') || lowerMessage.includes('pain')) {
-        return "Deep Tissue Massage targets deeper muscle layers to relieve chronic pain and tension. It's excellent for specific problem areas and recovery. A 60-minute session is $95. Perfect if you have ongoing muscle issues.";
+    if (lowerMessage.includes('deep tissue')) {
+        return "Deep Tissue Massage targets deeper muscle layers and connective tissue using slower strokes and deeper pressure. Excellent for chronic pain, injury recovery, and specific problem areas. May cause some temporary soreness.";
     }
     
     if (lowerMessage.includes('sport')) {
-        return "Sports Massage is designed for athletes to enhance performance and prevent injuries. It focuses on areas of intense physical use and promotes faster recovery. A 60-minute session is $90.";
+        return "Sports Massage focuses on athletes' needs - enhancing performance, preventing injuries, and promoting recovery. It can be done pre-event, post-event, or as maintenance. Includes stretching and deeper work on muscle groups used in specific sports.";
     }
     
-    // Booking questions
-    if (lowerMessage.includes('book') || lowerMessage.includes('appointment') || lowerMessage.includes('schedule')) {
-        return "You can book online through our website or email us at emilyfreamassage@outlook.com,. We're open Monday-Friday 9am-7pm and Saturday 10am-4pm. What type of massage would you like to schedule?";
+    if (lowerMessage.includes('hot stone')) {
+        return "Hot Stone Massage uses smooth, heated basalt stones placed on key points and used as massage tools. The heat allows for deeper muscle relaxation and promotes profound calm. Ideal for deep tension and stress relief.";
     }
     
-    if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('how much')) {
-        return "Our massage sessions range from $85 for 60-minute Swedish to $135 for 90-minute Hot Stone. We also offer packages: 3 sessions for $240 or 6 sessions for $520. Which service are you interested in?";
+    // Career & Training Questions
+    if (lowerMessage.includes('career') || lowerMessage.includes('become') || lowerMessage.includes('therapist')) {
+        return "To become a massage therapist: Complete a 500-1000 hour training program from an accredited school, pass licensing exams (varies by state), obtain CPR certification, and maintain continuing education. Career paths include clinical, spa, sports, or private practice settings.";
     }
     
-    // Benefit questions
+    if (lowerMessage.includes('school') || lowerMessage.includes('training') || lowerMessage.includes('education')) {
+        return "Massage therapy programs typically take 6-12 months and include anatomy, physiology, pathology, ethics, and hands-on practice. Look for schools accredited by COMTA. Costs range from $6,000-$15,000 depending on program length and location.";
+    }
+    
+    if (lowerMessage.includes('license') || lowerMessage.includes('certified')) {
+        return "Licensing requirements vary by state but generally include: completing an approved program, passing the MBLEx exam, background check, and CPR certification. Continuing education (12-24 hours annually) is required to maintain licensure.";
+    }
+    
+    if (lowerMessage.includes('salary') || lowerMessage.includes('income') || lowerMessage.includes('earn')) {
+        return "Massage therapist earnings vary by location, specialty, and setting. Average is $45,000-$65,000 annually. Clinical and sports massage typically pay more than spa work. Self-employed therapists can earn $60,000-$100,000 with established practice.";
+    }
+    
+    // Business & Practice Management
+    if (lowerMessage.includes('business') || lowerMessage.includes('start') || lowerMessage.includes('practice')) {
+        return "Starting a massage practice involves: business planning, legal structure (LLC recommended), insurance (liability & health), equipment investment ($2,000-$5,000), marketing, client management system, and compliance with local regulations. Build slowly while maintaining other income sources.";
+    }
+    
+    if (lowerMessage.includes('client') || lowerMessage.includes('session') || lowerMessage.includes('appointment')) {
+        return "Client sessions should include: health history review, assessment, treatment planning, the massage itself, aftercare advice, and follow-up. Maintain professional boundaries, clear communication, and detailed records. Sessions typically 60, 75, or 90 minutes.";
+    }
+    
+    if (lowerMessage.includes('insurance') || lowerMessage.includes('liability')) {
+        return "Essential insurance for massage therapists: Professional liability ($1-2 million coverage), general liability, and business property insurance. Cost: $200-$500 annually. Some states require specific coverage limits. Always verify client health insurance coverage if billing insurance.";
+    }
+    
+    // Equipment & Setup
+    if (lowerMessage.includes('table') || lowerMessage.includes('equipment')) {
+        return "Essential equipment: Quality massage table ($300-$800), adjustable face cradle, sheets and linens, oils/lotions, bolster pillows, sanitizing supplies, and comfortable room setup. Consider portable vs. stationary based on practice type.";
+    }
+    
+    if (lowerMessage.includes('oil') || lowerMessage.includes('lotion') || lowerMessage.includes('cream')) {
+        return "Common massage lubricants: Sweet almond oil (light absorption), coconut oil (medium glide), grapeseed oil (non-greasy), jojoba oil (similar to skin oils), and hypoallergenic lotions. Consider client allergies and treatment goals when selecting.";
+    }
+    
+    // Health Conditions & Benefits
     if (lowerMessage.includes('benefit') || lowerMessage.includes('help') || lowerMessage.includes('good for')) {
-        return "Massage therapy reduces stress, relieves muscle pain, improves circulation, enhances sleep quality, and promotes overall wellness. Regular sessions can significantly improve your quality of life!";
+        return "Massage benefits: Reduces stress and anxiety, relieves muscle tension and pain, improves circulation, enhances immune function, increases joint flexibility, improves sleep quality, reduces blood pressure, and promotes overall wellbeing.";
     }
     
-    if (lowerMessage.includes('stress') || lowerMessage.includes('anxiety') || lowerMessage.includes('relax')) {
-        return "Massage is excellent for stress relief! It lowers cortisol levels and increases feel-good hormones. Swedish or Aromatherapy massages are particularly effective for relaxation and mental calmness.";
+    if (lowerMessage.includes('pain') || lowerMessage.includes('hurt') || lowerMessage.includes('ache')) {
+        return "Massage can help with: Back pain, neck and shoulder tension, headaches, sciatica, arthritis, fibromyalgia, and sports injuries. Deep tissue and trigger point therapy are particularly effective for pain management. Always get medical clearance for serious conditions.";
     }
     
-    if (lowerMessage.includes('sleep')) {
-        return "Massage can significantly improve sleep quality by reducing pain, decreasing anxiety, and promoting deep relaxation. Many clients report falling asleep faster and sleeping more deeply after sessions.";
+    if (lowerMessage.includes('stress') || lowerMessage.includes('anxiety')) {
+        return "Massage reduces stress by: Lowering cortisol levels, increasing serotonin and dopamine, activating parasympathetic nervous system, reducing muscle tension, and promoting mental clarity. Swedish and aromatherapy massages are especially effective for stress relief.";
     }
     
-    // Location and contact
-    if (lowerMessage.includes('where') || lowerMessage.includes('location') || lowerMessage.includes('address')) {
-        return "We're located at USA Ohio in Cleveland lake wood. Easy parking and accessible by public transit. Would you like directions?";
+    // Self-Care & Home Care
+    if (lowerMessage.includes('self') || lowerMessage.includes('home') || lowerMessage.includes('between')) {
+        return "Between sessions: Practice self-massage with tennis balls or foam rollers, use heat/ice therapy, maintain hydration, do gentle stretching, practice good posture, get adequate sleep, and manage stress through breathing exercises or meditation.";
     }
     
-    if (lowerMessage.includes('phone') || lowerMessage.includes('number') || lowerMessage.includes('call')) {
-        return "You can reach us at emilyfreamassage@outlook.com. We'd be happy to answer any questions or help you book an appointment!";
+    if (lowerMessage.includes('stretch') || lowerMessage.includes('exercise')) {
+        return "Complementary exercises: Yoga for flexibility and balance, Pilates for core strength, walking for circulation, swimming for low-impact movement, and specific stretches targeting problem areas. Always warm up before stretching.";
     }
     
-    if (lowerMessage.includes('hour') || lowerMessage.includes('open') || lowerMessage.includes('time')) {
-        return "We're open Monday-Friday 9:00 AM - 7:00 PM and Saturday 10:00 AM - 4:00 PM. Closed on Sundays. When would you like to visit us?";
+    // Aftercare & Contraindications
+    if (lowerMessage.includes('after') || lowerMessage.includes('care') || lowerMessage.includes('drink water')) {
+        return "After massage: Drink plenty of water to flush toxins, avoid strenuous activity for 24 hours, take warm baths with Epsom salts, notice body responses, and schedule regular sessions for cumulative benefits. Some soreness is normal after deep work.";
     }
     
-    // General massage questions
-    if (lowerMessage.includes('first time') || lowerMessage.includes('new')) {
-        return "Welcome! For first-time clients, I recommend Swedish Massage - it's gentle and relaxing. Wear comfortable clothing and arrive 10 minutes early to complete paperwork. Any specific concerns?";
+    if (lowerMessage.includes('avoid') || lowerMessage.includes('should not') || lowerMessage.includes('contraindication')) {
+        return "Massage contraindications: Fever, contagious illnesses, recent surgery, blood clots, severe osteoporosis, certain heart conditions, and some skin conditions. Always disclose health conditions and medications to your therapist for safety.";
     }
     
-    if (lowerMessage.includes('how often') || lowerMessage.includes('frequency')) {
-        return "For general wellness, monthly sessions are great. For specific issues or high stress, every 2-3 weeks works well. We can create a personalized plan during your first visit!";
+    // Contact Information
+    if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('reach')) {
+        return "For personalized consultations or to discuss specific massage therapy needs, you can email emilyfreamassage@outlook.com. I'm happy to help with any massage-related questions!";
     }
     
-    // Default response
-    return "That's a great question about massage therapy! For personalized advice on " + userMessage + ", I recommend booking a consultation. Would you like information about our services or how to schedule an appointment?";
+    if (lowerMessage.includes('book') || lowerMessage.includes('appointment') || lowerMessage.includes('schedule')) {
+        return "To book a massage session or consultation, please email emilyfreamassage@outlook.com with your availability and any specific concerns you'd like to address. I'll help match you with the right massage approach for your needs.";
+    }
+    
+    // General Massage Knowledge
+    return "That's an interesting question about massage therapy! For comprehensive information about " + userMessage + ", I recommend consulting with a licensed massage therapist who can provide personalized guidance based on your specific situation. You can email emilyfreamassage@outlook.com for professional consultation.";
 }
 
 // Close AI widget when clicking outside
@@ -696,6 +799,7 @@ document.addEventListener('click', function(event) {
 </body>
 
 </html>
+
 
 
 
